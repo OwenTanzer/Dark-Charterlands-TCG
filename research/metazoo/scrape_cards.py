@@ -39,13 +39,11 @@ from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
+from card_schema import BASE, CARD_URL, CARD_TYPES, validate_card
 
-BASE = "https://www.metazootcg.com"
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "cache"
 HEADERS = {"User-Agent": "Dark-Charterlands-TCG research scraper (personal, non-commercial)"}
-CARD_URL = re.compile(re.escape(BASE) + r"/card/([A-Za-z0-9_-]+)/(\d+)$")
-CARD_TYPES = {"Creature", "Strategy", "Equipment", "Terra", "Caster", "Aura"}
 
 
 def request_text(session: requests.Session, url: str, delay: float) -> str:
@@ -150,7 +148,8 @@ def parse_card(html: str, url: str) -> dict:
     dl = art.find("dl")
     if dl:
         for dt in dl.find_all("dt"):
-            stats[text(dt)] = text(dt.find_next_sibling("dd"))
+            value = dt.find_next_sibling()
+            stats[text(dt)] = text(value) if value and value.name == "dd" else ""
     card["stats"] = stats
 
     lists = {}
@@ -169,6 +168,7 @@ def parse_card(html: str, url: str) -> dict:
     img = soup.find("meta", property="og:image")
     pic = soup.find("img", alt=card["name"])
     card["image"] = img["content"] if img else (pic.get("src") if pic else "")
+    validate_card(card)
     return card
 
 
@@ -210,6 +210,8 @@ def write_exports(cards: list[dict], stem: str, manifest: dict) -> None:
     A process interruption between replacements is detected by the analyzer's
     checksum check. Scrape failures never enter this function.
     """
+    for card in cards:
+        validate_card(card)
     with tempfile.TemporaryDirectory(dir=HERE) as staging:
         staging = Path(staging)
         json_path = staging / f"{stem}.json"

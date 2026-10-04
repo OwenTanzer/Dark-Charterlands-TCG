@@ -1,6 +1,7 @@
 """Synthetic, offline tests. No card text, artwork, or live HTTP requests."""
 import copy
 import csv
+import hashlib
 import io
 import json
 import tempfile
@@ -63,6 +64,99 @@ class ResearchTests(unittest.TestCase):
         self.assertEqual(self.card["rarity"], "Rare")
         self.assertEqual(self.card["stats"]["New Stat"], "4")
         self.assertEqual(self.card["lists"]["New List"], ["Example"])
+
+    def test_header_only_page_is_rejected(self):
+        incomplete = HTML.split("</header>")[0] + "</header></article>"
+        with self.assertRaisesRegex(ValueError, "Cost and Influence"):
+            scrape.parse_card(incomplete, URL)
+
+    def test_missing_mandatory_content_is_rejected(self):
+        variants = [
+            HTML.replace("<dt>Cost</dt><dd>3</dd>", ""),
+            HTML.replace("<dt>Cost</dt><dd>3</dd>", "<dt>Cost</dt>"),
+            HTML.replace("<dt>Influence</dt><dd>2</dd>", "<dt>Influence</dt><dd> </dd>"),
+            HTML.replace('style="background-color: blue"', ""),
+            HTML.replace("<span>Equipment</span><span>Creature</span>", ""),
+            HTML.replace("Éclair <span>— Test</span>", " "),
+        ]
+        for incomplete in variants:
+            with self.subTest(html=incomplete), self.assertRaises(ValueError):
+                scrape.parse_card(incomplete, URL)
+
+    def test_all_card_categories_allow_optional_content_to_be_absent(self):
+        for types in (["Aura"], ["Creature"], ["Strategy"], ["Equipment"], ["Terra"], ["Caster"], ["Creature", "Equipment"]):
+            chips = "".join(f"<span>{t}</span>" for t in types)
+            minimal = f'<article><header><p>Test Set · MZ1 #1</p><h1>Test card</h1><div><span style="background-color: blue">Air</span>{chips}</div></header><dl><dt>Cost</dt><dd>0</dd><dt>Influence</dt><dd>0</dd></dl></article>'
+            with self.subTest(types=types):
+                card = scrape.parse_card(minimal, URL)
+                self.assertEqual(card["card_types"], types)
+                self.assertEqual(card["rarity"], "")
+                self.assertEqual(card["lists"], {})
+                self.assertEqual(card["abilities"], [])
+                self.assertNotIn("Artist", card["stats"])
+        token = minimal.replace("</dl>", "</dl><div><span>Subtype</span><span>Token</span></div>")
+        self.assertEqual(scrape.parse_card(token, URL)["lists"]["Subtype"], ["Token"])
+
+    @patch.object(scrape.time, "sleep")
+    def test_header_only_run_never_caches_or_replaces_full_exports(self, sleep):
+        self.assertEqual(self.scrape_run([]), 0)
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(analyze.main([]), 0)
+        protected = ["cards.json", "cards.csv", "cards.manifest.json", "FEATURES.md"]
+        before = {name: (self.here / name).read_bytes() for name in protected}
+        policy = Mock()
+        policy.can_fetch.return_value = True
+        session = Mock()
+        session.get.return_value = response(HTML.split("</header>")[0] + "</header>")
+        with patch.object(scrape.requests, "Session", return_value=session), \
+             patch.object(scrape, "robots_policy", return_value=(policy, 1)), \
+             patch.object(scrape, "card_urls", return_value=[URL]), \
+             redirect_stderr(io.StringIO()):
+            self.assertEqual(scrape.main([]), 1)
+        self.assertFalse(scrape.CACHE.exists())
+        self.assertEqual(before, {name: (self.here / name).read_bytes() for name in protected})
+
+    def test_incomplete_cached_page_cannot_replace_exports(self):
+        self.assertEqual(self.scrape_run([]), 0)
+        before = (self.here / "cards.json").read_bytes()
+        path = scrape.CACHE / "MZ1" / "0001.html"
+        path.parent.mkdir(parents=True)
+        path.write_text(HTML.split("</header>")[0] + "</header>")
+        policy = Mock()
+        policy.can_fetch.return_value = True
+        with patch.object(scrape, "robots_policy", return_value=(policy, 1)), \
+             patch.object(scrape, "card_urls", return_value=[URL]), \
+             patch.object(scrape, "request_text") as request, redirect_stderr(io.StringIO()):
+            self.assertEqual(scrape.main([]), 1)
+        request.assert_not_called()
+        self.assertEqual((self.here / "cards.json").read_bytes(), before)
+
+    def test_analyzer_rejects_incomplete_records_even_with_valid_checksum(self):
+        changes = [{"stats": {}}, {"stats": {"Cost": "0"}}, {"name": " "},
+                   {"auras": []}, {"card_types": []}, {"card_types": ["Unknown"]},
+                   {"number": 2}, {"lists": {"Traits": "not a list"}}]
+        for change in changes:
+            with self.subTest(change=change):
+                self.assertEqual(self.scrape_run([]), 0)
+                card = dict(self.card, **change)
+                raw = json.dumps([card]).encode("utf-8")
+                (self.here / "cards.json").write_bytes(raw)
+                manifest_path = self.here / "cards.manifest.json"
+                manifest = json.loads(manifest_path.read_text())
+                manifest["cards_sha256"] = hashlib.sha256(raw).hexdigest()
+                manifest_path.write_text(json.dumps(manifest))
+                (self.here / "FEATURES.md").write_text("previous report")
+                with redirect_stderr(io.StringIO()):
+                    self.assertEqual(analyze.main([]), 1)
+                self.assertEqual((self.here / "FEATURES.md").read_text(), "previous report")
+
+    def test_export_writer_refuses_incomplete_record_before_replacing_files(self):
+        self.assertEqual(self.scrape_run([]), 0)
+        before = (self.here / "cards.json").read_bytes()
+        incomplete = dict(self.card, stats={})
+        with self.assertRaises(ValueError):
+            scrape.write_exports([incomplete], "cards", {})
+        self.assertEqual((self.here / "cards.json").read_bytes(), before)
 
     def test_missing_header_is_parse_failure(self):
         with self.assertRaises(ValueError):

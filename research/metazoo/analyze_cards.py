@@ -17,6 +17,7 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from statistics import mean, median
+from card_schema import validate_card
 
 HERE = Path(__file__).resolve().parent
 
@@ -53,15 +54,9 @@ def load_cards(stem: str) -> tuple[list[dict], dict]:
     cards = json.loads(raw)
     if not isinstance(cards, list) or not cards:
         raise ValueError("cards must be a nonempty list")
-    required = {"set_code", "set_name", "number", "url", "name", "auras", "rarity", "card_types", "stats", "lists", "abilities"}
     seen = set()
     for c in cards:
-        if not isinstance(c, dict) or not required <= c.keys():
-            raise ValueError("card is missing required fields")
-        if (not isinstance(c["set_code"], str) or not isinstance(c["number"], int)
-                or not isinstance(c["stats"], dict) or not isinstance(c["lists"], dict)
-                or not all(isinstance(c[k], list) for k in ("auras", "card_types", "abilities"))):
-            raise ValueError("card has invalid field types")
+        validate_card(c)
         identity = (c["set_code"], c["number"])
         if identity in seen:
             raise ValueError("duplicate card identity")

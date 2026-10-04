@@ -56,8 +56,11 @@ Legacy exports without a manifest must be regenerated before using the analyzer.
 
 CSV stat/list columns use `stat:` / `list:` prefixes to avoid field-name collisions.
 Potential spreadsheet formulas are prefixed with an apostrophe; JSON preserves
-original field text. Header identity and page structure are checked before new
-HTML is cached. UTF-8 is decoded explicitly rather than using an implicit Latin-1
+original field text. Header identity, a nonempty name, an Aura, a recognized card type, and nonempty
+Cost/Influence stats are required before HTML is cached or records are exported.
+The analyzer applies the same complete-card validation even when a checksum matches.
+Rarity, Artist, lists and abilities remain optional; basic Auras, tokens and vanilla
+cards are supported. A present ability section must include rules text. UTF-8 is decoded explicitly rather than using an implicit Latin-1
 fallback. New labelled stats and list fields are retained without code changes.
 
 Ability kinds and capitalized terms are text heuristics, not official rules
