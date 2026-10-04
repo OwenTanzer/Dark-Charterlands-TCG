@@ -70,6 +70,58 @@ class ResearchTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "Cost and Influence"):
             scrape.parse_card(incomplete, URL)
 
+    def test_every_truncation_after_stats_before_article_close_is_rejected(self):
+        first_cut = HTML.index("</dl>") + len("</dl>")
+        article_end = HTML.index("</article>") + len("</article>")
+        for cut in range(first_cut, article_end):
+            with self.subTest(cut=cut), self.assertRaisesRegex(ValueError, "complete article"):
+                scrape.parse_card(HTML[:cut], URL)
+        # A complete article is enough; the surrounding document may continue.
+        self.assertEqual(scrape.parse_card(HTML[:article_end], URL)["name"], "Éclair")
+
+    def test_closing_tag_literals_do_not_prove_article_completion(self):
+        incomplete = HTML[:HTML.index("</dl>") + len("</dl>")]
+        misleading = [
+            "<!-- </article> -->",
+            '<script>const example = "</article>";</script>',
+            '<style>div::after {content: "</article>"}</style>',
+            '<div data-example="</article>">',
+            '<textarea>Example </article></textarea>',
+            '<title>Example </article></title>',
+            '&lt;/article&gt;',
+        ]
+        for extra in misleading:
+            with self.subTest(extra=extra), self.assertRaisesRegex(ValueError, "complete article"):
+                scrape.parse_card(incomplete + extra, URL)
+
+    @patch.object(scrape.time, "sleep")
+    def test_later_truncations_preserve_cache_exports_and_report(self, sleep):
+        self.assertEqual(self.scrape_run([]), 0)
+        with redirect_stdout(io.StringIO()):
+            self.assertEqual(analyze.main([]), 0)
+        protected = ["cards.json", "cards.csv", "cards.manifest.json", "FEATURES.md"]
+        before = {name: (self.here / name).read_bytes() for name in protected}
+        cuts = [HTML.index("</dl>") + len("</dl>"), HTML.index("While") + len("While"),
+                HTML.index("</section>") + len("</section>"), HTML.index("</article>")]
+        for cut in cuts:
+            with self.subTest(cut=cut):
+                policy = Mock()
+                policy.can_fetch.return_value = True
+                session = Mock()
+                session.get.return_value = response(HTML[:cut])
+                with patch.object(scrape.requests, "Session", return_value=session), \
+                     patch.object(scrape, "robots_policy", return_value=(policy, 1)), \
+                     patch.object(scrape, "card_urls", return_value=[URL]), \
+                     redirect_stderr(io.StringIO()):
+                    self.assertEqual(scrape.main([]), 1)
+                self.assertFalse(scrape.CACHE.exists())
+                self.assertEqual(before, {name: (self.here / name).read_bytes() for name in protected})
+                # Even if analysis is invoked after the failed scrape, it only
+                # reads the preserved good dataset and cannot erase its details.
+                with redirect_stdout(io.StringIO()):
+                    self.assertEqual(analyze.main([]), 0)
+                self.assertEqual(before, {name: (self.here / name).read_bytes() for name in protected})
+
     def test_missing_mandatory_content_is_rejected(self):
         variants = [
             HTML.replace("<dt>Cost</dt><dd>3</dd>", ""),
@@ -341,6 +393,18 @@ class ResearchTests(unittest.TestCase):
         path.write_text(json.dumps(manifest))
         with self.assertRaises(ValueError):
             analyze.load_cards("cards")
+
+    def test_pre_completion_validation_manifest_requires_regeneration(self):
+        self.assertEqual(self.scrape_run([]), 0)
+        path = self.here / "cards.manifest.json"
+        manifest = json.loads(path.read_text())
+        self.assertEqual(manifest["schema_version"], 2)
+        manifest["schema_version"] = 1
+        path.write_text(json.dumps(manifest))
+        (self.here / "FEATURES.md").write_text("previous report")
+        with redirect_stderr(io.StringIO()):
+            self.assertEqual(analyze.main([]), 1)
+        self.assertEqual((self.here / "FEATURES.md").read_text(), "previous report")
 
     def test_missing_manifest_does_not_silently_analyze_legacy_data(self):
         (self.here / "cards.json").write_text(json.dumps([self.card]))

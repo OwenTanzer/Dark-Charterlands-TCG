@@ -52,12 +52,17 @@ missing/mismatched manifests, duplicate card identities, incomplete runs, and
 incorrect scope/counts. A crash between replacements is detected by the JSON
 checksum. Generation time is not a fresh-fetch timestamp: cached pages can be
 older. To refresh an old cache, remove it locally before a permitted new run.
-Legacy exports without a manifest must be regenerated before using the analyzer.
+Legacy exports without a manifest, or with schema version 1, must be regenerated
+before using the analyzer. Schema version 2 requires complete source articles;
+older structurally plausible exports may have come from repaired/truncated pages.
 
 CSV stat/list columns use `stat:` / `list:` prefixes to avoid field-name collisions.
 Potential spreadsheet formulas are prefixed with an apostrophe; JSON preserves
 original field text. Header identity, a nonempty name, an Aura, a recognized card type, and nonempty
 Cost/Influence stats are required before HTML is cached or records are exported.
+The source must contain the actual closing tag for its first card article; a DOM
+parser repairing truncated HTML is not evidence that the card finished loading.
+Closing-tag text in comments, script bodies or quoted attributes does not count.
 The analyzer applies the same complete-card validation even when a checksum matches.
 Rarity, Artist, lists and abilities remain optional; basic Auras, tokens and vanilla
 cards are supported. A present ability section must include rules text. UTF-8 is decoded explicitly rather than using an implicit Latin-1

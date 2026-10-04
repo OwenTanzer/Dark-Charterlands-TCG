@@ -47,8 +47,8 @@ def num(v: str):
 def load_cards(stem: str) -> tuple[list[dict], dict]:
     raw = (HERE / f"{stem}.json").read_bytes()
     manifest = json.loads((HERE / f"{stem}.manifest.json").read_text(encoding="utf-8"))
-    if not isinstance(manifest, dict) or manifest.get("schema_version") != 1:
-        raise ValueError("unsupported or missing manifest schema")
+    if not isinstance(manifest, dict) or manifest.get("schema_version") != 2:
+        raise ValueError("unsupported or missing manifest schema; rerun scraper with complete-article validation")
     if hashlib.sha256(raw).hexdigest() != manifest.get("cards_sha256"):
         raise ValueError("cards checksum does not match manifest; rerun scraper")
     cards = json.loads(raw)

@@ -31,6 +31,7 @@ import tempfile
 import xml.etree.ElementTree as ET
 from collections import Counter
 from datetime import datetime, timezone
+from html.parser import HTMLParser
 from urllib.robotparser import RobotFileParser
 import re
 import sys
@@ -111,7 +112,48 @@ def text(el) -> str:
     return " ".join(el.get_text(" ", strip=True).split()) if el else ""
 
 
+class ArticleCompletionParser(HTMLParser):
+    """Observe source tokens, without repairing unclosed card markup.
+
+    HTMLParser treats comments, quoted attributes and script/style bodies as
+    content, so a literal "</article>" inside them is not a closing-tag token.
+    Only the first article is checked, matching BeautifulSoup.find below.
+    """
+    def __init__(self):
+        super().__init__()
+        self.article_depth = 0
+        self.complete = False
+        self.text_container = None
+
+    def handle_starttag(self, tag, attrs):
+        if self.text_container:
+            return
+        if tag in {"script", "style", "textarea", "title"}:
+            self.text_container = tag
+        if tag == "article" and not self.complete:
+            self.article_depth += 1
+
+    def handle_endtag(self, tag):
+        if self.text_container:
+            if tag == self.text_container:
+                self.text_container = None
+            return
+        if tag == "article" and self.article_depth:
+            self.article_depth -= 1
+            if self.article_depth == 0:
+                self.complete = True
+
+
+def require_complete_article(html: str) -> None:
+    parser = ArticleCompletionParser()
+    parser.feed(html)
+    parser.close()
+    if not parser.complete:
+        raise ValueError("card source has no complete article; response may be truncated")
+
+
 def parse_card(html: str, url: str) -> dict:
+    require_complete_article(html)
     soup = BeautifulSoup(html, "html.parser")
     art = soup.find("article")
     if art is None or art.find("h1") is None or art.find("header") is None:
@@ -273,7 +315,7 @@ def main(argv=None):
         partial = args.sets is not None or args.limit is not None
         stem = "cards.partial" if partial else "cards"
         write_exports(cards, stem, {
-            "schema_version": 1,
+            "schema_version": 2,
             "generated_at_utc": datetime.now(timezone.utc).isoformat(),
             "source_sitemap": f"{BASE}/sitemap.xml",
             "scope": "filtered" if partial else "full_sitemap",
