@@ -259,6 +259,51 @@ Capitalized words are usually defined game actions or keywords.
 | Dark Aura | 15 |
 | On Successful | 14 |
 
+## Design signals
+
+### Creature stat rate: Influence per Cost, vanilla vs cards with abilities
+
+The gap is the Influence MetaZoo charges for an ability (the "ability tax").
+
+| Cost | Vanilla Influence | With abilities | Ability tax |
+|---|---|---|---|
+| 0 | 1.0 (n=2) | - | - |
+| 1 | 1.9 (n=9) | 1.4 (n=28) | +0.5 |
+| 2 | 2.4 (n=9) | 2.4 (n=54) | +0.0 |
+| 3 | 4.6 (n=5) | 3.1 (n=63) | +1.5 |
+| 4 | 5.0 (n=9) | 3.8 (n=53) | +1.2 |
+| 5 | 6.8 (n=6) | 4.7 (n=39) | +2.1 |
+| 6 | 7.2 (n=4) | 6.1 (n=38) | +1.2 |
+| 7 | 9.0 (n=3) | 6.4 (n=41) | +2.6 |
+| 8 | 10.2 (n=4) | 9.5 (n=15) | +0.7 |
+| 9 | 11.0 (n=1) | 8.4 (n=20) | +2.6 |
+| 10 | - | 6.1 (n=14) | - |
+
+### Average Cost by rarity
+
+| Rarity | Avg Cost |
+|---|---|
+| Common | 2.66 |
+| Uncommon | 2.76 |
+| Rare | 3.63 |
+| Super Rare | 5.84 |
+| Alt Art | 5.76 |
+| Legend | 4.07 |
+| Hidden | 5.32 |
+
+### Aura identity (each Aura's "color pie")
+
+Top keywords, traits and rules-text verbs per Aura.
+
+| Aura | Keywords | Traits (excl. Cryptid/Myth) | Rules-text verbs |
+|---|---|---|---|
+| Air | Soar (27), Duel (8), Discover (5) | Aerial (46), Terror (31), Ward (18) | Move (60), Tap (27), Mission (19) |
+| Earth | Duel (20), Overwhelm (13), Discover (4) | Beast (34), Ward (27), Hybrid (19) | Tap (31), Duel (22), Mission (14) |
+| Fire | Destruction (8), Overwhelm (8), Discover (6) | Elemental (35), Terror (28), Beast (22) | Tap (27), Shatter (21), Mission (12) |
+| Lightning | Overwhelm (6), Discover (2), Destruction (2) | Anomaly (22), Terror (22), Elemental (21) | Spark (41), Tap (22), Sacrifice (19) |
+| Water | Overwhelm (7), Gigantic (4), Discover (3) | Aquatic (26), Ward (17), Terror (17) | Tap (31), Return (21), Mission (16) |
+| Dark | Destruction (13), Gigantic (2), Overwhelm (1) | Terror (21), Afflicted (18), Nocturnal (14) | Mission (33), Hex (31), Tap (14) |
+
 ## Data quirks
 
 - Some Trait values are misspelled in MetaZoo's own data (e.g. `Anomlay`, `Areial`) and are counted separately.
