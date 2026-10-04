@@ -131,6 +131,37 @@ def main():
            "Capitalized words are usually defined game actions or keywords.", ""]
     md += table(["Term", "Mentions"], [[k, v] for k, v in terms.most_common(40)])
 
+    md += ["## Design signals", "",
+           "### Creature stat rate: Influence per Cost, vanilla vs cards with abilities", "",
+           "The gap is the Influence MetaZoo charges for an ability (the \"ability tax\").", ""]
+    creatures = [c for c in cards if "Creature" in c["card_types"]]
+    rows = []
+    for cost in sorted({num(c["stats"].get("Cost")) for c in creatures} - {None}):
+        van = [num(c["stats"]["Influence"]) for c in creatures if num(c["stats"]["Cost"]) == cost and not c["abilities"]]
+        abl = [num(c["stats"]["Influence"]) for c in creatures if num(c["stats"]["Cost"]) == cost and c["abilities"]]
+        fmt = lambda v: f"{mean(v):.1f} (n={len(v)})" if v else "-"
+        tax = f"{mean(van) - mean(abl):+.1f}" if van and abl else "-"
+        rows.append([f"{cost:g}", fmt(van), fmt(abl), tax])
+    md += table(["Cost", "Vanilla Influence", "With abilities", "Ability tax"], rows)
+    rows = [[r, f"{mean(num(c['stats']['Cost']) for c in cards if c['rarity'] == r):.2f}"]
+            for r, _ in rarity.most_common() if any(c["rarity"] == r for c in cards)]
+    md += ["### Average Cost by rarity", ""] + table(["Rarity", "Avg Cost"], rows)
+
+    md += ["### Aura identity (each Aura's \"color pie\")", "",
+           "Top keywords, traits and rules-text verbs per Aura.", ""]
+    verbs = ["Move", "Hex", "Tap", "Shatter", "Sacrifice", "Draw", "Discard", "Return", "Mission",
+             "Spark", "Jetsam", "Duel", "Destruction", "Discover", "Overwhelm", "Soar"]
+    rows = []
+    for a, _ in auras.most_common():
+        group = [c for c in cards if a in c["auras"]]
+        kw = Counter(k for c in group for k in c["lists"].get("Keywords", []))
+        tr = Counter(k for c in group for k in c["lists"].get("Traits", []) if k not in ("Cryptid", "Myth"))
+        vb = Counter(w for c in group for w in verbs
+                     if re.search(rf"\b{w}", " ".join(ab["text"] for ab in c["abilities"])))
+        top = lambda ctr: ", ".join(f"{k} ({v})" for k, v in ctr.most_common(3))
+        rows.append([a, top(kw), top(tr), top(vb)])
+    md += table(["Aura", "Keywords", "Traits (excl. Cryptid/Myth)", "Rules-text verbs"], rows)
+
     md += ["## Data quirks", "",
            "- Some Trait values are misspelled in MetaZoo's own data (e.g. `Anomlay`, `Areial`) and are counted separately.",
            "- A few rules texts contain garbled characters (e.g. `ÃÂ¥` where a bullet should be). That is in the "
