@@ -1,0 +1,10 @@
+# Raw scraped pages and the full card dump stay local: the repo is public and
+# the card text/art belong to MetaZoo. FEATURES.md (aggregate stats) is committed.
+cache/
+cards.json
+cards.csv
+failed.json
+__pycache__/
+cards.partial.*
+cards.manifest.json
+FEATURES.partial.md
