@@ -2,7 +2,7 @@
 
 > **Status:** first draft for review. Every mechanic below is a proposal to
 > prototype and playtest, not a decision. Names (factions, zones, keywords) are
-> placeholders. Each mechanic cites the research insights (I1-I20) in
+> placeholders. Each mechanic cites the research insights (I1-I24) in
 > [`docs/research/tcg-design-research.md`](../research/tcg-design-research.md)
 > that motivate it.
 
@@ -15,6 +15,7 @@
 | E3 | **Multiplayer free-for-all (3-4+) first** | Must stay fun and fair at 3, 4 and 5+ players. Kingmaking and turtling must be designed against. |
 | E4 | **Physical cards** | No hidden bookkeeping a computer would need to track. Every state is visible cards, tokens or face-down cards. |
 | E5 | **20-40 minutes** | With 4 players, nobody can sit and wait through three other people's turns. |
+| E6 | **Community-made formats** | Groups and stores write their own rules for the group format (like store Commander leagues). The game ships a **Community Charter** framework that supports and grows this. |
 
 E1 and E5 pull against each other: deep games are slow, and slow multiplayer games
 are long. Most of this design exists to resolve that tension, by running thinking in
@@ -42,7 +43,7 @@ flowchart LR
     M1[Face-down Commit<br/>+ Initiative]
     M2[Live draft every Season]
     M3[Contested locations:<br/>Marches + Crown]
-    M4[Regent / Usurper,<br/>Secret Charters,<br/>fixed 5 Seasons]
+    M4[Regent / Usurper,<br/>Secret Charters,<br/>fixed final Season]
   end
   A1 --- D1 --- M1
   A2 --- D2 --- M2
@@ -54,7 +55,7 @@ flowchart LR
 
 The old crown of the Charterlands is empty. Every region's royal charter is up
 for grabs, and each player is a **Claimant** trying to gather enough **Renown**
-to be acclaimed before the fifth Season ends. Location names below borrow from
+to be acclaimed before the final Season ends. Location names below borrow from
 the `charterlands-assets` region maps (Dunric High Crown, Salt Road, Thornwood,
 Siltfen, ...). If those maps belong to a different project, swap the names; the
 mechanics don't depend on them.
@@ -65,7 +66,7 @@ mechanics don't depend on them.
 flowchart TD
   S0([Open boosters<br/>into the Supply]) --> S1[Opening:<br/>pick Claimant + Secret Charter,<br/>opening draft]
   S1 --> L
-  subgraph L[Season, repeated 5 times]
+  subgraph L[Season, repeated; default 5]
     direction TB
     P1[MUSTER<br/>live draft + bank Seals]:::sim
     P2[COMMIT<br/>place units face-down]:::sim
@@ -74,7 +75,7 @@ flowchart TD
     P5[RECKONING<br/>score Renown, crown the Regent,<br/>pass Initiative]:::ord
     P1 --> P2 --> P3 --> P4 --> P5
   end
-  L -->|after Season 5| F([Final scoring:<br/>public Renown + Secret Charters])
+  L -->|after the final Season| F([Final scoring:<br/>public Renown + Secret Charters])
   classDef sim fill:#1f6f43,stroke:#0b3,color:#fff
   classDef ord fill:#7a2e2e,stroke:#c33,color:#fff
 ```
@@ -197,7 +198,7 @@ Crown**.
 - Untap everything and check the Season counter.
 
 ### 6.8 Winning
-- The game ends after **Season 5**, a fixed end, so leader bashing can't drag it out
+- The game ends after the **final Season** (a Charter dial; default **5**). That fixed end means leader bashing can't drag it out
   (I16).
 - Final score = public Renown + revealed **Secret Charter**. A hidden share of the
   score blurs who is really leading, which reduces leader bashing and makes
@@ -205,9 +206,92 @@ Crown**.
 - **No player elimination.** Everyone plays all five Seasons.
 - Tiebreak: most Marches claimed, then the current Regent.
 
-## 7. Cards
+## 7. Community Charters: the layer groups write themselves (E6)
 
-### 7.1 Card types
+Commander became Magic's biggest multiplayer format because playgroups invented it
+and stores ran their own leagues around it (I21). We want that from day one, and
+the Charterlands give us the frame for it: **in this world, a charter is a grant of
+rights to govern a place.** A **Community Charter** is a playgroup's or store's
+written, ratified set of house rules for the group format. The game ships the tools
+to write one, share it, and grow it.
+
+> Terminology: **Charter cards** are the Season cards revealed on the Crown (section 6).
+> **Secret Charters** are hidden objectives. A **Community Charter** is a group's
+> house-rules document, and it can include its own custom Charter cards.
+
+### 7.1 Stable core, swappable dials (I23)
+The rules are split into two layers:
+
+| Layer | Who controls it | Examples |
+|---|---|---|
+| **Crown Law** (core rules) | Designers; stable across all groups | Season phases, Commit/reveal, how Contests resolve, Seals, card text |
+| **Charter Clauses** (dials) | Each community | Season count, pack size, Crown variants, Renown values, Regent/Usurper rewards, banned or featured cards, draft direction, seating, handicaps, league scoring |
+
+This puts a constraint on the core design: **card text and core rules must refer to
+dials, not hard numbers.** For example, cards say "the final Season" rather than
+"Season 5", and "the Crown's Renown value" rather than "2 Renown". A group can then
+change a dial without breaking any card.
+
+### 7.2 What ships to support communities
+1. **Community Charter template.** A one-page document with:
+   - **Name and Seat** (the store or group it belongs to)
+   - its **Standing**
+   - chosen **Clauses** (from the library) and any **custom Clauses**
+   - **league rules**
+   - **how amendments are ratified** (for example, a majority of regulars)
+   - a **version number**
+
+   It's designed to fit on a store's wall or the inside of a deck box.
+2. **Clause Library.** A published catalog of tested Clauses with notes on how each
+   one shifts the game. It works like a menu with rated effects, so groups can mix
+   and match safely.
+3. **Standings.** A shared vocabulary for expectations (I22), like Commander
+   Brackets, so "what kind of table is this?" has a real answer instead of
+   "everything's a 7". Placeholder tiers:
+   - *Hearth* (casual, story-forward)
+   - *Market* (focused but friendly)
+   - *Court* (tuned)
+   - *Crown* (no-holds-barred competitive)
+4. **Custom Charter card kit.** A blank Charter-card template plus costing guidance,
+   so communities can write their own Season cards. This is the most natural place
+   for house rules to live, because the core loop already expects one Charter card
+   to change the rules each Season.
+5. **League Kit for stores** (I24): season schedule, a standings sheet, seating by
+   league points, and a starter set of **Deeds** (league achievements worth league
+   points, not in-game Renown).
+
+   Deeds are designed so they **don't distort play or create kingmaking**: they reward
+   what *you* accomplish ("claim the Crown with a Siltfen unit"), never harming a
+   specific player ("make the Regent lose").
+6. **Charter Registry** (later). A public place where groups publish their Charters
+   and Clauses, rate them, and fork each other's.
+
+### 7.3 The growth loop
+
+```mermaid
+flowchart LR
+  A[Group or store plays<br/>with Crown Law] --> B[Writes a Community Charter<br/>from template + Clause Library]
+  B --> C[Runs a league<br/>with League Kit + Deeds]
+  C --> D[Amends the Charter<br/>by its own ratification rule]
+  D --> E[Publishes to the<br/>Charter Registry]
+  E --> F[Other groups adopt<br/>or fork its Clauses]
+  F --> B
+  E --> G[Designers canonize the best<br/>Clauses into the official library]
+  G --> B
+```
+
+### 7.4 Governance lessons
+- **Designers own Crown Law; communities own their Charters.** Commander's volunteer
+  committee ended in 2024 after a ban backlash. Our split means no single body has to
+  arbitrate every group's preferences.
+- **"Canonized" Clauses** give recognition and a path upward without taking control
+  away from groups.
+- **Sanctioned play** (if we ever run it) would use a published reference Charter, so
+  competitive events and local Charters can coexist.
+
+## 8. Cards
+
+### 8.1 Card types
 
 | Type | MetaZoo analog | Role |
 |---|---|---|
@@ -218,7 +302,7 @@ Crown**.
 | **Claimant** | Caster | Your leader: faction allegiance and an asymmetric start |
 | **Charter** | (Mission) | Season card on the Crown; changes reward or rule |
 
-### 7.2 Card anatomy (unit)
+### 8.2 Card anatomy (unit)
 
 ```
 ┌───────────────────────────────┐
@@ -235,7 +319,7 @@ Crown**.
 └───────────────────────────────┘
 ```
 
-### 7.3 Factions (5 → 10 draft archetypes)
+### 8.3 Factions (5 → 10 draft archetypes)
 **Five factions** give **ten two-faction pairs**: one draft archetype per pair, each
 with a signpost uncommon (I15). Each faction owns **one or two signature verbs**,
 following MetaZoo's clean Aura identities (I20). All names are placeholders.
@@ -250,7 +334,7 @@ following MetaZoo's clean Aura identities (I20). All names are placeholders.
 
 About **5-6 keywords in total** at launch. Traits do most of the synergy work (I20).
 
-### 7.4 Costing (start point, then playtest)
+### 8.4 Costing (start point, then playtest)
 From MetaZoo's measured rate (I19), for units:
 - **Vanilla Influence ≈ Cost + 1.5**
 - **Each ability ≈ −1.5 to −2 Influence**, priced by how strong the ability is
@@ -260,7 +344,7 @@ From MetaZoo's measured rate (I19), for units:
 Booster draft is the priority format, so the commons have to be strong and the
 packs need to feel even.
 
-## 8. Where the depth comes from (E1)
+## 9. Where the depth comes from (E1)
 
 | Depth source | Decision |
 |---|---|
@@ -273,7 +357,7 @@ packs need to feel even.
 | Secret Charter | Steering toward a hidden goal without revealing it |
 | Synergy | Cards built for 2-3 card combinations, so depth grows faster than the card pool (Algomancy) |
 
-## 9. Time budget (E5)
+## 10. Time budget (E5)
 
 Estimates to verify in playtesting, 4 players:
 
@@ -297,7 +381,7 @@ preference:
 Adding players adds mostly parallel work, so 5-6 players should cost only a few
 minutes more.
 
-## 10. How the design meets expectations
+## 11. How the design meets expectations
 
 | Expectation | Met by | Risk |
 |---|---|---|
@@ -305,9 +389,10 @@ minutes more.
 | E2 Booster draft first | Boosters form the Supply; drafting is *every* Season | Logistics of passing packs on a crowded table |
 | E3 FFA 3-4+ | Marches plus Crown, Regent / Usurper, Secret Charters, fixed end, no elimination | 3-player games where everyone neighbors everyone |
 | E4 Physical | Only visible cards, face-down cards and a few tokens (Renown, Writs, Initiative, Regent) | Pack refills need table space |
-| E5 20-40 min | Parallel Muster / Commit / Edicts; Marches resolve in parallel | Upper estimate is 48 min; see section 9 levers |
+| E5 20-40 min | Parallel Muster / Commit / Edicts; Marches resolve in parallel | Upper estimate is 48 min; see section 10 levers |
+| E6 Community formats | Crown Law vs Charter Clauses split; Community Charter template, Clause Library, Standings, custom Charter cards, League Kit with Deeds, Charter Registry | A house rule breaking balance (mitigated by rated Clauses); fragmentation between groups |
 
-## 11. Traceability: mechanic → insight
+## 12. Traceability: mechanic → insight
 
 | Mechanic | Insights |
 |---|---|
@@ -322,8 +407,11 @@ minutes more.
 | Influence instead of life totals | I18 |
 | 5 factions → 10 archetypes, signature verbs | I15, I20 |
 | Costing formula; power not gated by rarity | I4, I17, I19 |
+| Community Charters (Crown Law vs Clauses, template, Clause Library) | I21, I23 |
+| Standings tiers | I22 |
+| League Kit, Deeds, Charter Registry | I21, I24 |
 
-## 12. Open questions for review
+## 13. Open questions for review
 1. **Factions:** 5 (10 archetypes, cleaner draft) or 6 (matching MetaZoo's six Auras)?
 2. **Secret Charters:** is about 15-20% of the score hidden the right amount, or does it
    make the game feel random to a hardcore audience?
@@ -334,8 +422,10 @@ minutes more.
    boosters (I17)?
 5. **3-player balance:** with everyone neighboring everyone, does the Crown still matter?
 6. **Theme:** do the `charterlands-assets` maps belong to this game?
+7. **Community Charters:** which dials should be open in the first Clause Library, and should the Charter Registry be a website from launch or start as a shared document?
+8. **Standings:** four tiers or five (Commander uses five brackets)? Should they be tied to card lists, the way Commander's "Game Changers" are?
 
-## 13. Next steps
+## 14. Next steps
 1. **Paper prototype:** about 120 placeholder cards (24 per faction plus neutrals),
    sleeved over proxies, with Renown, Writ, Initiative and Regent tokens.
 2. **Playtest metrics** (log every game):
@@ -348,5 +438,6 @@ minutes more.
 3. **Rules simulator:** a small script with random and greedy bots, to catch dominant
    strategies (for example, "always turtle the Crown") before human testing (de Mesentier
    Silva et al.).
-4. Expand the research on resource systems (Sekula) and simultaneous-reveal design
+4. Draft the first **Community Charter template** and a 10-15 entry **Clause Library**, and playtest at least two Clauses alongside the core rules.
+5. Expand the research on resource systems (Sekula) and simultaneous-reveal design
    (Brode) before locking section 6.3.

@@ -8,6 +8,8 @@ on four kinds of source:
 3. Other games and design writing
 4. Our own analysis of the 721 official MetaZoo cards (`research/metazoo/FEATURES.md`)
 
+A fifth section covers community-run formats (Commander and its leagues).
+
 Each section ends with numbered **insights (I1, I2, ...)**. The design document
 ([`docs/design/core-gameplay-loop.md`](../design/core-gameplay-loop.md)) traces
 every mechanic back to these insights.
@@ -20,6 +22,7 @@ every mechanic back to these insights.
 | Priority formats | **Booster draft** and **multiplayer free-for-all (3-4+ players)** first |
 | Medium | Physical cards |
 | Game length | 20-40 minutes |
+| Community | Groups and stores should **write their own rules** for the group format, like store-run Commander leagues, with the game providing a **charter** framework that supports it |
 
 ---
 
@@ -303,6 +306,59 @@ so we scraped all 721 official cards (`research/metazoo/`). The full numbers are
 
 ---
 
+## 5. Community-run formats and house rules
+
+### Commander: a format the community built
+Commander began as **Elder Dragon Highlander**, a fan-made format Adam Staley
+developed for his local playgroups in Alaska in the late 1990s. From 2006 its banned
+list was kept by a volunteer **Commander Rules Committee**, not by Wizards of the
+Coast ([Wikipedia](https://en.wikipedia.org/wiki/Magic:_The_Gathering_Commander);
+[MTG Wiki](https://mtg.fandom.com/wiki/Commander_(format))). It grew into Magic's most
+popular multiplayer format. In **September 2024**, after an extreme backlash to a
+banning decision, the committee **dissolved and handed the format to Wizards**
+([Commander's Herald](https://commandersherald.com/commander-rules-committee-dissolves/)).
+
+### Rule 0 and the need for a shared vocabulary
+Before 2025, groups set expectations with an informal pregame **"Rule 0"**
+conversation, rating decks on a subjective 1-10 scale where "almost every homebrew
+deck was inexplicably described as a 7 out of 10". In February 2025 Wizards introduced
+**Commander Brackets**: five clearly defined, intent-based tiers plus a "Game
+Changers" list ([MTG Wiki: Commander Brackets](https://mtg.wiki/page/Commander_Brackets);
+[Draftsim](https://draftsim.com/mtg-commander-format-panel/)).
+
+### Store leagues
+Stores run their own Commander leagues with their own scoring: **league points,
+achievements, participation prizes**, and pods seated by standings
+([WPN: running Commander events](https://wpn.wizards.com/en/news/how-to-run-successful-commander-events-and-grow-your-community);
+[EDHREC: creating an EDH league](https://edhrec.com/articles/bringing-magic-to-life-creating-an-edh-league);
+[r/EDH store point systems](https://www.reddit.com/r/EDH/comments/7yrt5l/anyones_local_game_store_do_some_sort_of_point/)).
+Wizards now packages this as **"Commander Nights"**, a weekly league with
+*rotating global rules* and achievement-based prizes ([WPN](https://wpn.wizards.com/en/news/managing-wpn-programs)).
+Third-party league software lets organizers set their own scoring and season length
+([example](https://mtgsl.cloud/)).
+
+### Community stewardship
+When Fantasy Flight ended Android: Netrunner, the community founded **Null Signal
+Games**, a registered nonprofit that keeps designing and supporting the game,
+including help for local organizers ([nullsignal.games](https://nullsignal.games/);
+[Sprites & Dice](https://spritesanddice.com/features/project-nisei-and-future-netrunner/)).
+
+**Insights**
+- **I21. Communities make formats; publishers should give them tools, not just
+  permission.** Commander grew from house rules into Magic's biggest multiplayer
+  format. We should design for that from day one.
+- **I22. Ship a shared vocabulary for expectations.** Unstructured Rule 0 produced
+  "everything is a 7". Brackets fixed it with defined tiers. Groups need common terms
+  for power level and house rules.
+- **I23. Keep the core stable and make the edges modular.** Leagues thrive on rotating
+  rules and achievements, while the Rules Committee's collapse shows the cost of
+  contested central control. Fix the core rules, and make the parts communities change
+  explicit, swappable "dials".
+- **I24. Give stores a turnkey league kit:** scoring, achievements, seating by standings
+  and season length, so running a league is easy.
+
+---
+
 ## Insight index
 
 | # | Insight | Main sources |
@@ -327,3 +383,7 @@ so we scraped all 721 official cards (`research/metazoo/`). The full numbers are
 | I18 | Contest Influence, not life totals | MetaZoo analysis |
 | I19 | Start from MetaZoo's stat rate | MetaZoo analysis |
 | I20 | Signature verbs per faction; traits for synergy | MetaZoo analysis |
+| I21 | Give communities tools to make formats | Commander history |
+| I22 | Ship a shared vocabulary for expectations | Rule 0 → Commander Brackets |
+| I23 | Stable core, modular "dials" at the edges | Store leagues; Rules Committee |
+| I24 | Turnkey league kit for stores | WPN Commander Nights; EDH leagues |
