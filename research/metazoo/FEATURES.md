@@ -2,6 +2,10 @@
 
 721 cards scraped from the official [MetaZoo card database](https://www.metazootcg.com/cards) by `scrape_cards.py`. Regenerate with `python analyze_cards.py`.
 
+Snapshot originally committed on 2026-10-04. The official sitemap was spot-checked on that date and contains 721 card-page URLs (MZ1 239, MZ2 259, MZ3 223). The private full export was not available during code review, so the remaining aggregate values below are retained from the author's original report rather than independently regenerated. Future exports include a checksum and scope manifest.
+
+Counts describe card pages/printings, including variants and tokens, rather than deduplicated card designs.
+
 ## Sets
 
 | Code | Set | Cards |
@@ -37,6 +41,8 @@
 | (none: basic Aura / token) | 8 | 1% |
 
 ## Card types
+
+Type combinations are mutually exclusive buckets. The 5 Creature + Equipment cards are additional to the 412 Creature-only and 81 Equipment-only cards; all rows sum to 721.
 
 | Type | Cards | Share |
 |---|---|---|
@@ -159,15 +165,17 @@ Share of cards of that type carrying the field.
 
 ### Ability kinds
 
+Heuristic text-prefix groups, not official rules classifications. Conditions such as While/If may be static, and bracketed text may be an annotation rather than a payment cost.
+
 | Kind | Abilities |
 |---|---|
-| Triggered (On / When / While / If ...) | 257 |
+| Trigger / condition-prefixed (heuristic) | 257 |
 | Static / one-shot effect | 202 |
-| Activated (pay a cost: effect) | 183 |
+| Bracketed / activation-prefixed (heuristic) | 183 |
 | Keyword-led (Discover, Overwhelm, Duel ...) | 44 |
 | Modal (Choose one) | 7 |
 
-### Most common triggers (first 5 words)
+### Most common trigger / condition prefixes (first 5 words)
 
 | Trigger | Abilities |
 |---|---|
@@ -192,9 +200,9 @@ Share of cards of that type carrying the field.
 | During Missions | 2 |
 | When a friendly Lightning unit | 2 |
 
-### Most common activation costs (numbers shown as N)
+### Most common bracketed / activation prefixes (numbers shown as N)
 
-| Cost | Abilities |
+| Prefix | Abilities |
 |---|---|
 | [Tap this card] | 28 |
 | [Tap N Fire Aura] | 26 |
@@ -214,7 +222,7 @@ Share of cards of that type carrying the field.
 
 ### Capitalized game terms in rules text
 
-Capitalized words are usually defined game actions or keywords.
+Frequency of capitalized words and pairs; this heuristic includes ordinary words and does not establish official game terms.
 
 | Term | Mentions |
 |---|---|
@@ -261,8 +269,8 @@ Capitalized words are usually defined game actions or keywords.
 
 ## Data quirks
 
-- Some Trait values are misspelled in MetaZoo's own data (e.g. `Anomlay`, `Areial`) and are counted separately.
-- A few rules texts contain garbled characters (e.g. `ÃÂ¥` where a bullet should be). That is in the official site's data, not introduced by the scraper.
+- The original export reported spelling variants such as `Anomlay` and `Areial`, counted separately.
+- The original export reported garbled characters in some rules text. Their origin was not independently verified against source bytes; do not assume they came from the site. UTF-8 decoding is explicit in the reviewed scraper. Previously generated caches may need to be removed locally and rebuilt.
 
 ## Artists
 

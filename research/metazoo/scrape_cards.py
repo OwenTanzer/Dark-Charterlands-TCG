@@ -24,6 +24,14 @@ Usage:
 import argparse
 import csv
 import json
+import hashlib
+import math
+import os
+import tempfile
+import xml.etree.ElementTree as ET
+from collections import Counter
+from datetime import datetime, timezone
+from urllib.robotparser import RobotFileParser
 import re
 import sys
 import time
@@ -36,34 +44,69 @@ BASE = "https://www.metazootcg.com"
 HERE = Path(__file__).resolve().parent
 CACHE = HERE / "cache"
 HEADERS = {"User-Agent": "Dark-Charterlands-TCG research scraper (personal, non-commercial)"}
-CARD_URL = re.compile(r"/card/([^/]+)/(\d+)$")
+CARD_URL = re.compile(re.escape(BASE) + r"/card/([A-Za-z0-9_-]+)/(\d+)$")
 CARD_TYPES = {"Creature", "Strategy", "Equipment", "Terra", "Caster", "Aura"}
 
 
-def card_urls(session: requests.Session) -> list[str]:
-    xml = session.get(f"{BASE}/sitemap.xml", timeout=30).text
-    urls = [u for u in re.findall(r"<loc>([^<]+)</loc>", xml) if CARD_URL.search(u)]
-    return sorted(set(urls), key=lambda u: (CARD_URL.search(u)[1], int(CARD_URL.search(u)[2])))
+def request_text(session: requests.Session, url: str, delay: float) -> str:
+    """Read UTF-8 public text, with bounded retries and no redirect following."""
+    for attempt in range(3):
+        try:
+            resp = session.get(url, timeout=30, allow_redirects=False)
+        finally:
+            time.sleep(delay)  # Transport failures must still respect pacing.
+        if resp.is_redirect:
+            raise ValueError(f"refusing redirect from {url}")
+        if resp.status_code == 429 or resp.status_code >= 500:
+            if attempt < 2:
+                try:
+                    retry_after = float(resp.headers.get("Retry-After", "0"))
+                except ValueError:
+                    retry_after = 0
+                # Long or dated Retry-After responses need a later manual retry.
+                if (not math.isfinite(retry_after) or retry_after > 60
+                        or (resp.headers.get("Retry-After") and retry_after == 0)):
+                    resp.raise_for_status()
+                time.sleep(max(5 * (attempt + 1), retry_after))
+                continue
+        resp.raise_for_status()
+        # The source is UTF-8. Do not use requests' implicit Latin-1 fallback,
+        # which can permanently introduce mojibake into the local cache.
+        return resp.content.decode("utf-8-sig")
+    raise RuntimeError("request attempts exhausted")
+
+
+def robots_policy(session: requests.Session, delay: float) -> tuple[RobotFileParser, float]:
+    policy = RobotFileParser(f"{BASE}/robots.txt")
+    policy.parse(request_text(session, policy.url, delay).splitlines())
+    crawl_delay = policy.crawl_delay(HEADERS["User-Agent"])
+    return policy, max(delay, crawl_delay or 0)
+
+
+def card_urls(session: requests.Session, delay: float = 1.0) -> list[str]:
+    xml = request_text(session, f"{BASE}/sitemap.xml", delay)
+    root = ET.fromstring(xml)
+    urls = {el.text.strip() for el in root.iter()
+            if el.tag.rsplit("}", 1)[-1] == "loc" and el.text
+            and CARD_URL.fullmatch(el.text.strip())}
+    if not urls:
+        raise ValueError("sitemap contained no supported card URLs")
+    return sorted(urls, key=lambda u: (CARD_URL.fullmatch(u)[1], int(CARD_URL.fullmatch(u)[2])))
 
 
 def fetch(session: requests.Session, url: str, delay: float) -> str:
-    set_code, num = CARD_URL.search(url).groups()
+    match = CARD_URL.fullmatch(url)
+    if not match:
+        raise ValueError("unsupported card URL")
+    set_code, num = match.groups()
     path = CACHE / set_code / f"{int(num):04d}.html"
     if path.exists():
         return path.read_text(encoding="utf-8")
-    for attempt in range(3):
-        resp = session.get(url, timeout=30)
-        if resp.status_code == 429 or resp.status_code >= 500:
-            time.sleep(5 * (attempt + 1))
-            continue
-        resp.raise_for_status()
-        break
-    else:
-        resp.raise_for_status()
+    html = request_text(session, url, delay)
+    parse_card(html, url)  # Never cache a successful HTTP error/interstitial page.
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(resp.text, encoding="utf-8")
-    time.sleep(delay)
-    return resp.text
+    path.write_text(html, encoding="utf-8")
+    return html
 
 
 def text(el) -> str:
@@ -73,13 +116,18 @@ def text(el) -> str:
 def parse_card(html: str, url: str) -> dict:
     soup = BeautifulSoup(html, "html.parser")
     art = soup.find("article")
-    if art is None or art.find("h1") is None:
+    if art is None or art.find("h1") is None or art.find("header") is None:
         raise ValueError("no card <article> on page")
     header = art.find("header")
-    set_code, num = CARD_URL.search(url).groups()
+    match = CARD_URL.fullmatch(url)
+    if not match:
+        raise ValueError("unsupported card URL")
+    set_code, num = match.groups()
     card = {"set_code": set_code, "number": int(num), "url": url}
 
     set_line = text(header.find("p"))  # "Base Set · MZ1 # 1"
+    if not re.search(rf"\b{re.escape(set_code)}\s*#\s*0*{int(num)}\b", set_line):
+        raise ValueError("card header identity does not match URL")
     card["set_name"] = set_line.split("·")[0].strip()
     h1 = art.find("h1")
     sub = h1.find("span")  # "— At The Ready" variant subtitle
@@ -129,57 +177,119 @@ def write_csv(cards: list[dict], path: Path) -> None:
     list_keys = sorted({k for c in cards for k in c["lists"]})
     max_ab = max((len(c["abilities"]) for c in cards), default=0)
     cols = ["set_code", "set_name", "number", "name", "subtitle", "auras", "rarity", "card_types",
-            *stat_keys, *list_keys]
+            *[f"stat:{k}" for k in stat_keys], *[f"list:{k}" for k in list_keys]]
     for i in range(1, max_ab + 1):
         cols += [f"ability_{i}_name", f"ability_{i}_text"]
     cols += ["flavor", "url", "image"]
     with path.open("w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=cols)
-        w.writeheader()
+        w = csv.writer(f)
+        w.writerow([csv_safe(v) for v in cols])
         for c in cards:
             row = {k: c[k] for k in ("set_code", "set_name", "number", "name", "subtitle", "rarity",
                                      "flavor", "url", "image")}
             row["auras"] = "; ".join(c["auras"])
             row["card_types"] = "; ".join(c["card_types"])
-            row.update(c["stats"])
-            row.update({k: "; ".join(v) for k, v in c["lists"].items()})
+            row.update({f"stat:{k}": v for k, v in c["stats"].items()})
+            row.update({f"list:{k}": "; ".join(v) for k, v in c["lists"].items()})
             for i, ab in enumerate(c["abilities"], 1):
                 row[f"ability_{i}_name"], row[f"ability_{i}_text"] = ab["name"], ab["text"]
-            w.writerow(row)
+            w.writerow([csv_safe(row.get(k, "")) for k in cols])
 
 
-def main():
+def csv_safe(value):
+    """Keep untrusted page text from becoming spreadsheet formulas."""
+    if isinstance(value, str) and (value.startswith(("\t", "\r", "\n"))
+                                  or value.lstrip().startswith(("=", "+", "-", "@"))):
+        return "'" + value
+    return value
+
+
+def write_exports(cards: list[dict], stem: str, manifest: dict) -> None:
+    """Stage both exports, then publish the checksum manifest last.
+
+    A process interruption between replacements is detected by the analyzer's
+    checksum check. Scrape failures never enter this function.
+    """
+    with tempfile.TemporaryDirectory(dir=HERE) as staging:
+        staging = Path(staging)
+        json_path = staging / f"{stem}.json"
+        json_path.write_text(json.dumps(cards, indent=2, ensure_ascii=False), encoding="utf-8")
+        write_csv(cards, staging / f"{stem}.csv")
+        manifest["cards_sha256"] = hashlib.sha256(json_path.read_bytes()).hexdigest()
+        (staging / f"{stem}.manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+        for suffix in ("json", "csv", "manifest.json"):
+            os.replace(staging / f"{stem}.{suffix}", HERE / f"{stem}.{suffix}")
+
+
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--delay", type=float, default=1.0, help="Seconds between uncached requests (default 1)")
-    ap.add_argument("--limit", type=int, default=None, help="Only the first N cards")
-    ap.add_argument("--sets", type=str, default=None, help="Comma-separated set codes, e.g. MZ1,MZ2")
-    args = ap.parse_args()
+    ap.add_argument("--delay", type=float, default=1.0, help="Seconds between requests (minimum/default 1)")
+    ap.add_argument("--limit", type=int, default=None, help="Only the first N cards; writes cards.partial.*")
+    ap.add_argument("--sets", type=str, default=None, help="Comma-separated set codes; writes cards.partial.*")
+    args = ap.parse_args(argv)
+    if not math.isfinite(args.delay) or args.delay < 1:
+        ap.error("--delay must be finite and at least 1 second")
+    if args.limit is not None and args.limit <= 0:
+        ap.error("--limit must be positive")
 
-    session = requests.Session()
-    session.headers.update(HEADERS)
-    urls = card_urls(session)
-    if args.sets:
-        wanted = {s.strip().upper() for s in args.sets.split(",")}
-        urls = [u for u in urls if CARD_URL.search(u)[1].upper() in wanted]
-    if args.limit:
-        urls = urls[:args.limit]
-    print(f"{len(urls)} card pages", file=sys.stderr)
+    try:
+        session = requests.Session()
+        session.headers.update(HEADERS)
+        policy, delay = robots_policy(session, args.delay)
+        if not policy.can_fetch(HEADERS["User-Agent"], f"{BASE}/sitemap.xml"):
+            raise ValueError("robots.txt disallows sitemap access")
+        all_urls = card_urls(session, delay)
+        urls = all_urls
+        if args.sets is not None:
+            wanted = {s.strip().upper() for s in args.sets.split(",")}
+            available = {CARD_URL.fullmatch(u)[1].upper() for u in urls}
+            if not wanted or not wanted <= available:
+                raise ValueError("--sets must name nonempty set codes present in the sitemap")
+            urls = [u for u in urls if CARD_URL.fullmatch(u)[1].upper() in wanted]
+        if args.limit is not None:
+            urls = urls[:args.limit]
+        if any(not policy.can_fetch(HEADERS["User-Agent"], u) for u in urls):
+            raise ValueError("robots.txt disallows one or more selected card pages")
+        print(f"{len(urls)} card pages", file=sys.stderr)
 
-    cards, failed = [], []
-    for i, url in enumerate(urls, 1):
-        try:
-            cards.append(parse_card(fetch(session, url, args.delay), url))
-        except (requests.RequestException, ValueError) as e:
-            failed.append({"url": url, "error": str(e)})
-        if i % 50 == 0 or i == len(urls):
-            print(f"  {i}/{len(urls)} ({len(failed)} failed)", file=sys.stderr)
-
-    (HERE / "cards.json").write_text(json.dumps(cards, indent=2, ensure_ascii=False), encoding="utf-8")
-    write_csv(cards, HERE / "cards.csv")
-    if failed:
-        (HERE / "failed.json").write_text(json.dumps(failed, indent=2), encoding="utf-8")
-    print(f"wrote {len(cards)} cards to cards.json / cards.csv; {len(failed)} failed", file=sys.stderr)
+        cards, failed = [], []
+        for i, url in enumerate(urls, 1):
+            try:
+                cards.append(parse_card(fetch(session, url, delay), url))
+            except (requests.RequestException, ValueError, UnicodeError) as e:
+                failed.append({"url": url, "error": str(e)})
+                response = getattr(e, "response", None)
+                if isinstance(e, requests.RequestException) and (response is None
+                        or response.status_code in (401, 403, 429) or response.status_code >= 500):
+                    break  # Stop on connection failure, denial, or persistent overload.
+            if i % 50 == 0 or i == len(urls):
+                print(f"  {i}/{len(urls)} ({len(failed)} failed)", file=sys.stderr)
+        if failed:
+            (HERE / "failed.json").write_text(json.dumps(failed, indent=2), encoding="utf-8")
+            print(f"{len(failed)} pages failed; existing exports were not changed. See failed.json.", file=sys.stderr)
+            return 1
+        partial = args.sets is not None or args.limit is not None
+        stem = "cards.partial" if partial else "cards"
+        write_exports(cards, stem, {
+            "schema_version": 1,
+            "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+            "source_sitemap": f"{BASE}/sitemap.xml",
+            "scope": "filtered" if partial else "full_sitemap",
+            "filters": {"sets": args.sets, "limit": args.limit},
+            "sitemap_count": len(all_urls),
+            "selected_count": len(urls),
+            "parsed_count": len(cards),
+            "failed_count": 0,
+            "set_counts": dict(sorted(Counter(c["set_code"] for c in cards).items())),
+            "cache_note": "Pages can come from earlier cached fetches; generation time is not a fresh-source timestamp.",
+        })
+        (HERE / "failed.json").unlink(missing_ok=True)
+        print(f"wrote {len(cards)} cards to {stem}.json / {stem}.csv and checksum manifest", file=sys.stderr)
+        return 0
+    except (requests.RequestException, ValueError, UnicodeError, ET.ParseError, OSError) as e:
+        print(f"Scrape failed: {e}", file=sys.stderr)
+        return 1
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

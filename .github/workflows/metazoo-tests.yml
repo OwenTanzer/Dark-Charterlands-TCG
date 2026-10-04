@@ -1,0 +1,27 @@
+name: MetaZoo offline tests
+on:
+  pull_request:
+    paths:
+      - 'research/metazoo/**'
+      - '.github/workflows/metazoo-tests.yml'
+  push:
+    branches: [main, research/metazoo-card-features]
+    paths:
+      - 'research/metazoo/**'
+      - '.github/workflows/metazoo-tests.yml'
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -r research/metazoo/requirements.txt
+      - run: python -m unittest discover -s research/metazoo -p 'test_*.py' -v
+      - run: python -m py_compile research/metazoo/*.py

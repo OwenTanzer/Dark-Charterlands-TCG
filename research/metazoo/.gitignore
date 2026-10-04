@@ -5,3 +5,6 @@ cards.json
 cards.csv
 failed.json
 __pycache__/
+cards.partial.*
+cards.manifest.json
+FEATURES.partial.md
