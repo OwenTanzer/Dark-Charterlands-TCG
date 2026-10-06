@@ -1,0 +1,25 @@
+{
+  "video": {
+    "id": "yGkpoYxSep8",
+    "views": 376192,
+    "speaker": "Extra Credits",
+    "title": "Collectible Games III: What Makes a Good TCG or CCG?"
+  },
+  "summary": "The video discusses the benefits and depth of collectible card games (CCGs) and trading card games (TCGs), highlighting how they evolve with new cards, manage information complexity, and offer unique gameplay experiences. The speaker emphasizes that while these games can be dangerous if used purely for monetization, they also provide rich and dynamic gameplay experiences when designed well.",
+  "overall_lesson": "The team should focus on designing Dark Charterlands to be a dynamic and evolving game that encourages players to explore different strategies and adapt to new cards, ensuring a rich and engaging gameplay experience.",
+  "takeaways": [
+    {
+      "point_index": 0,
+      "area": "Draft & set structure",
+      "implication": "The team should design Dark Charterlands to encourage players to explore different tactics and strategies, ensuring that the game remains dynamic and engaging over time. This can be achieved by regularly introducing new cards and mechanics that force players to adapt their strategies. The game should also provide a variety of playstyles and deck-building options to keep players engaged and motivated to collect new cards.",
+      "relevance": "high",
+      "main_point": "Collectible card games (CCGs) and trading card games (TCGs) offer dynamic and evolving gameplay experiences as players acquire new cards.",
+      "explanation": "The speaker explains that collectible games naturally change as players acquire more cards, encouraging them to rethink strategies and integrate new elements. This dynamic nature means players are not stuck with a single play style and are encouraged to explore different tactics. The game continuously presents new puzzles to solve by asking players to make the most effective deck possible. This is more compelling than games where players quickly settle into a strategy or find limited optimal ways to play. The optimal deck for any given player changes over time, making the game more dynamic and personalized.",
+      "timestamp_seconds": 33,
+      "importance": "major"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}

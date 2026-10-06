@@ -1,0 +1,21 @@
+{
+  "video_id": "M3b3hDvRjJA",
+  "title": "Power Creep in Hearthstone - What It Teaches Us About Games - Extra Credits",
+  "video_type": "Analytic Overview",
+  "summary": "The video discusses the concept of power creep in games, using Hearthstone as an example. It explains how power creep can occur unintentionally due to the complexity of game design, and how it can affect the balance and longevity of a game. The speaker also highlights the importance of understanding the power curve and how certain cards can inadvertently set a new baseline for future card design.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "Power creep in games can occur unintentionally due to the complexity of game design, particularly in collectible card games like Hearthstone.",
+      "explanation": "The speaker explains that power creep can happen accidentally as designers work on increasingly complex sets of interlocking pieces, such as cards in a collectible card game. This type of power creep is more insidious because it is not immediately obvious and can lead to long-term issues with game balance. The speaker uses Hearthstone as an example, discussing how certain cards like Piloted Shredder can set a new baseline for future card design, forcing designers to create increasingly powerful cards to keep up. This unintentional power creep can delete all the design space below the new baseline, making previously playable cards obsolete.",
+      "timestamp_seconds": 64
+    },
+    {
+      "importance": "major",
+      "main_point": "Understanding the power curve is crucial for identifying and mitigating power creep in games.",
+      "explanation": "The speaker defines the power curve as the graph created by plotting the power and cost of each card in a game. Cards that spike too high above this curve risk breaking the game, while those that spike too low risk being unplayable. The speaker uses examples from Hearthstone to illustrate how cards like Piloted Shredder can set a new baseline for future card design, impacting the overall power level of the game. By understanding the power curve, designers can better identify when power creep is occurring and take steps to mitigate it.",
+      "timestamp_seconds": 92
+    }
+  ],
+  "model": "mistral-small"
+}

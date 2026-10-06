@@ -1,0 +1,27 @@
+{
+  "video_id": "Liq62RmZBaw",
+  "title": "The History of Roguelike Deckbuilders - From Playing Cards to CCGs and Beyond - Extra Credits",
+  "video_type": "Analytic Overview",
+  "summary": "The video traces the evolution of roguelike deck-building games, from the invention of playing cards to the rise of digital collectible card games (CCGs) and the emergence of roguelike deck builders like Slay the Spire. It highlights key milestones and innovations in the genre, culminating in the introduction of Roguebook, a new game from the creators of Faeria.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The evolution of card games from physical playing cards to digital collectible card games (CCGs).",
+      "explanation": "The video discusses how playing cards, invented around 3,500 years ago in China, became a ubiquitous gaming object due to their portability and versatility. The advent of collectible cards in the early 20th century, initially included with tobacco and gum products, led to the creation of trading card games. This evolution culminated in the digital age with the rise of CCGs, starting with Magic: The Gathering in the early 1990s.",
+      "timestamp_seconds": 35
+    },
+    {
+      "importance": "major",
+      "main_point": "The creation and impact of Magic: The Gathering on the gaming industry.",
+      "explanation": "Magic: The Gathering, created by Richard Garfield and published by Wizards of the Coast, revolutionized the gaming industry by combining the portability of playing cards with the collectibility of trading cards. It introduced new game types like sealed and draft, which utilized the randomness of card packs to create varied gaming experiences. Magic's success led to the acquisition of Dungeons & Dragons by Wizards of the Coast and has continued to influence the gaming landscape for over 25 years.",
+      "timestamp_seconds": 201
+    },
+    {
+      "importance": "major",
+      "main_point": "The emergence of roguelike deck-building games and their impact on the genre.",
+      "explanation": "The video highlights the emergence of roguelike deck-building games, starting with Dream Quest in 2014, which married roguelike gameplay with deck-building mechanics. This was followed by the massive success of Slay the Spire, which popularized the genre and inspired many clones. The video also mentions Roguebook, a new game from the creators of Faeria, which aims to innovate further in the roguelike deck-building genre.",
+      "timestamp_seconds": 392
+    }
+  ],
+  "model": "mistral-small"
+}

@@ -1,0 +1,35 @@
+{
+  "video": {
+    "id": "Liq62RmZBaw",
+    "views": 168918,
+    "speaker": "Extra Credits",
+    "title": "The History of Roguelike Deckbuilders"
+  },
+  "summary": "The video traces the evolution of roguelike deck-building games, from the invention of playing cards to the rise of digital collectible card games (CCGs) and the emergence of roguelike deck builders like Slay the Spire. It highlights key milestones and innovations in the genre, culminating in the introduction of Roguebook, a new game from the creators of Faeria.",
+  "overall_lesson": "The team should study the evolution of card games and the innovations that have shaped the genre, particularly focusing on costing, balance, and onboarding to ensure Dark Charterlands stands out in the market.",
+  "takeaways": [
+    {
+      "point_index": 1,
+      "area": "Business & distribution",
+      "implication": "The team should study Magic: The Gathering's costing and balance, as it has been refined over decades. Consider how the influence costing in Dark Charterlands compares to Magic's mana costing, and ensure that the game's balance is robust enough to support a wide variety of strategies and archetypes.",
+      "relevance": "high",
+      "main_point": "The creation and impact of Magic: The Gathering on the gaming industry.",
+      "explanation": "Magic: The Gathering, created by Richard Garfield and published by Wizards of the Coast, revolutionized the gaming industry by combining the portability of playing cards with the collectibility of trading cards. It introduced new game types like sealed and draft, which utilized the randomness of card packs to create varied gaming experiences. Magic's success led to the acquisition of Dungeons & Dragons by Wizards of the Coast and has continued to influence the gaming landscape for over 25 years.",
+      "timestamp_seconds": 201,
+      "importance": "major"
+    },
+    {
+      "point_index": 2,
+      "area": "Card & mechanic design",
+      "implication": "The team should consider the onboarding experience for new players, as roguelike deck-building games can be complex. Ensure that Dark Charterlands has a clear and engaging tutorial to help new players understand the core loop and mechanics.",
+      "relevance": "medium",
+      "main_point": "The emergence of roguelike deck-building games and their impact on the genre.",
+      "explanation": "The video highlights the emergence of roguelike deck-building games, starting with Dream Quest in 2014, which married roguelike gameplay with deck-building mechanics. This was followed by the massive success of Slay the Spire, which popularized the genre and inspired many clones. The video also mentions Roguebook, a new game from the creators of Faeria, which aims to innovate further in the roguelike deck-building genre.",
+      "timestamp_seconds": 392,
+      "importance": "major"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}

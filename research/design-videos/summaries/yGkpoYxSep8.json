@@ -1,0 +1,15 @@
+{
+  "video_id": "yGkpoYxSep8",
+  "title": "Collectible Games - III: What Makes a Good TCG or CCG? - Extra Credits",
+  "video_type": "Analytic Overview",
+  "summary": "The video discusses the benefits and depth of collectible card games (CCGs) and trading card games (TCGs), highlighting how they evolve with new cards, manage information complexity, and offer unique gameplay experiences. The speaker emphasizes that while these games can be dangerous if used purely for monetization, they also provide rich and dynamic gameplay experiences when designed well.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "Collectible card games (CCGs) and trading card games (TCGs) offer dynamic and evolving gameplay experiences as players acquire new cards.",
+      "explanation": "The speaker explains that collectible games naturally change as players acquire more cards, encouraging them to rethink strategies and integrate new elements. This dynamic nature means players are not stuck with a single play style and are encouraged to explore different tactics. The game continuously presents new puzzles to solve by asking players to make the most effective deck possible. This is more compelling than games where players quickly settle into a strategy or find limited optimal ways to play. The optimal deck for any given player changes over time, making the game more dynamic and personalized.",
+      "timestamp_seconds": 33
+    }
+  ],
+  "model": "mistral-small"
+}

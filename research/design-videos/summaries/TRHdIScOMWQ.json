@@ -1,0 +1,15 @@
+{
+  "video_id": "TRHdIScOMWQ",
+  "title": "First Move Advantage - How to Balance Turn-Based Games - Extra Credits",
+  "video_type": "Analytic Overview",
+  "summary": "The video discusses the concept of 'First Move Advantage' in turn-based games, highlighting the challenges designers face in balancing this advantage. It explores different types of turn-based games and provides strategies for mitigating the first move advantage, emphasizing the importance of continuous monitoring and adjustment.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "First move advantage is a significant design challenge in turn-based games, requiring careful balancing to ensure fairness.",
+      "explanation": "The video explains that in many turn-based games, the player who goes first has a significant advantage. Designers must implement mechanics to compensate for this, such as giving the second player extra cards or points. The example of Go is used to illustrate how the handicap for the starting player has been adjusted over time, but it's never been quite enough to fully balance the game. In Hearthstone, the second player gets multiple benefits, which some professional players find over-balanced. The video also notes that the impact of first move advantage is greater in developed-resource games, where players build up resources over time, compared to static-resource games where all pieces are available from the start.",
+      "timestamp_seconds": 23
+    }
+  ],
+  "model": "mistral-small"
+}

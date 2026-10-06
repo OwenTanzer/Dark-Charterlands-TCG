@@ -1,0 +1,45 @@
+{
+  "video_id": "c4QJDKIg-38",
+  "title": "Designing my own Trading Card Game.",
+  "video_type": "Thesis Piece",
+  "summary": "The video documents the initial stages of creating a trading card game, inspired by the speaker's love for games and art. The speaker collaborates with a company called Creo to develop the game, which involves designing unique characters, abilities, and environments. The speaker focuses on the desert biome, creating eight guardians with distinct abilities and appearances, and seeks input from the audience on various aspects of the game's development.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The speaker is creating a trading card game inspired by their love for games and art.",
+      "explanation": "The speaker received an email from a game enthusiast named Luke, which inspired them to create a trading card game. The speaker has a background in creating custom playing cards and sees this as an opportunity to build their own world with unique characters, abilities, and environments. The game is being developed in collaboration with a company called Creo, and the speaker is excited about the creative process involved.",
+      "timestamp_seconds": 25
+    },
+    {
+      "importance": "major",
+      "main_point": "The game's core mechanics involve guardians protecting denisins to score points.",
+      "explanation": "The game's objective is to accumulate 10 points by playing denisin cards, which are protected by guardian cards. Each guardian has a point value that determines how many denisins can be played. The guardians have unique abilities that can change the gameplay dynamics. The game is divided into biomes, each with its own play style and characteristics.",
+      "timestamp_seconds": 118
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker is focusing on the desert biome for the initial phase of development.",
+      "explanation": "The speaker has narrowed down the biomes to desert, jungle, sky, and ocean for the initial release. They are starting with the desert biome and have created eight guardian characters inspired by desert animals. Each guardian has a unique design, abilities, and a level of power. The speaker is experimenting with different color schemes and styles for the cards.",
+      "timestamp_seconds": 238
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker is seeking input from the audience on various aspects of the game.",
+      "explanation": "The speaker encourages the audience to provide feedback and suggestions on the game's development. They mention that the names of the characters and the game itself are not set in stone and are open to suggestions. The speaker also plans to use polls to gather input from the audience on decisions related to the game's design.",
+      "timestamp_seconds": null
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker is using Adobe Fresco for the artwork and plans to utilize vector graphics for easy adjustments.",
+      "explanation": "The speaker is using Adobe Fresco for creating the artwork for the trading cards. They are utilizing vector brushes for inks and fill colors, which allows for easy adjustments later in Illustrator. The speaker is also experimenting with different color schemes and styles for the cards, including monochromatic and night versions.",
+      "timestamp_seconds": 791
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker is excited about the creative process and the potential of the project.",
+      "explanation": "The speaker expresses excitement about the creative process involved in developing the trading card game. They mention that it is a big and juicy project to sink their teeth into and hope to maintain the level of fun throughout the development process. The speaker is also grateful for the support and input from the audience and the team at Creo.",
+      "timestamp_seconds": 866
+    }
+  ],
+  "model": "mistral-small"
+}

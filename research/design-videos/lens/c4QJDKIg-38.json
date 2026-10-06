@@ -1,0 +1,45 @@
+{
+  "video": {
+    "id": "c4QJDKIg-38",
+    "views": 238325,
+    "speaker": "Ten Hundred",
+    "title": "Designing my own Trading Card Game"
+  },
+  "summary": "The video documents the initial stages of creating a trading card game, inspired by the speaker's love for games and art. The speaker collaborates with a company called Creo to develop the game, which involves designing unique characters, abilities, and environments. The speaker focuses on the desert biome, creating eight guardians with distinct abilities and appearances, and seeks input from the audience on various aspects of the game's development.",
+  "overall_lesson": "Engage with the community early and often to gather feedback and shape the game's design, while ensuring the core loop is engaging and the onboarding process is smooth.",
+  "takeaways": [
+    {
+      "point_index": 1,
+      "area": "Card & mechanic design",
+      "implication": "Ensure that the core loop of Muster, Commit, Contest, Edicts, and Reckoning is engaging and maintains player interest throughout the 20-40 minute game length. Consider how the scoring of denisins in the video can inform how players accumulate Renown in Dark Charterlands.",
+      "relevance": "medium",
+      "main_point": "The game's core mechanics involve guardians protecting denisins to score points.",
+      "explanation": "The game's objective is to accumulate 10 points by playing denisin cards, which are protected by guardian cards. Each guardian has a point value that determines how many denisins can be played. The guardians have unique abilities that can change the gameplay dynamics. The game is divided into biomes, each with its own play style and characteristics.",
+      "timestamp_seconds": 118,
+      "importance": "major"
+    },
+    {
+      "point_index": 2,
+      "area": "Draft & set structure",
+      "implication": "Start with a limited set of factions and archetypes to ease players into the game. Consider how the desert biome's unique play style can inform the distinct strategies of different factions in Dark Charterlands.",
+      "relevance": "medium",
+      "main_point": "The speaker is focusing on the desert biome for the initial phase of development.",
+      "explanation": "The speaker has narrowed down the biomes to desert, jungle, sky, and ocean for the initial release. They are starting with the desert biome and have created eight guardian characters inspired by desert animals. Each guardian has a unique design, abilities, and a level of power. The speaker is experimenting with different color schemes and styles for the cards.",
+      "timestamp_seconds": 238,
+      "importance": "major"
+    },
+    {
+      "point_index": 3,
+      "area": "Playtesting & metrics",
+      "implication": "Engage with the community for feedback on character names, game mechanics, and other design aspects. Use polls and other interactive methods to gather input, similar to how the speaker is seeking audience suggestions.",
+      "relevance": "high",
+      "main_point": "The speaker is seeking input from the audience on various aspects of the game.",
+      "explanation": "The speaker encourages the audience to provide feedback and suggestions on the game's development. They mention that the names of the characters and the game itself are not set in stone and are open to suggestions. The speaker also plans to use polls to gather input from the audience on decisions related to the game's design.",
+      "timestamp_seconds": null,
+      "importance": "minor"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}
