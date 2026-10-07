@@ -1,0 +1,45 @@
+{
+  "video_id": "61IZB37UOLM",
+  "title": "Let's Make a Trading Card Game: 26 - Kickstarter Launch, Multiplayer & Card Wordings",
+  "video_type": "Thesis Piece",
+  "summary": "The video explores the development and launch of a Kickstarter campaign for the trading card game 'Multiverse: Cosmic Conquest', highlighting innovative multiplayer features and the importance of balancing gameplay. It also delves into the iterative process of refining card effects and terminology to enhance clarity and player experience.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The Kickstarter campaign for 'Multiverse: Cosmic Conquest' has been launched.",
+      "explanation": "The speaker announces the launch of the Kickstarter campaign for their trading card game, 'Multiverse: Cosmic Conquest'. They emphasize the need for support and highlight the various rewards available at different pledge tiers. The Kickstarter page includes a video and detailed information about the game.",
+      "timestamp_seconds": 7
+    },
+    {
+      "importance": "major",
+      "main_point": "The game includes multiplayer features with instant actions to enhance interaction and reduce wait times.",
+      "explanation": "The speaker explains that multiplayer games in 'Multiverse: Cosmic Conquest' can be longer due to more players and turn-based mechanics. To mitigate this, they introduced 'instant actions' that allow players to respond to actions directly affecting them, reducing overall wait times and increasing interaction. This design ensures that players remain engaged even when it's not their turn.",
+      "timestamp_seconds": 91
+    },
+    {
+      "importance": "major",
+      "main_point": "The 'wormhole' card is introduced to make multiplayer games more dynamic and engaging.",
+      "explanation": "The speaker introduces the 'wormhole' card, a galaxy card that allows objects to move from one wormhole to another, effectively shortening the distance between different parts of the galaxy. This card is designed to be more powerful in multiplayer games, enhancing interaction and dynamics without affecting the balance of two-player games. The wormhole card requires at least two wormholes to be explored for movement, ensuring it doesn't become overpowered.",
+      "timestamp_seconds": 503
+    },
+    {
+      "importance": "minor",
+      "main_point": "The game's rules and card wordings have been updated to improve clarity and balance.",
+      "explanation": "The speaker mentions that the game's rules have been updated, and the card wordings have been revised for better clarity. This includes fixing 'weird wonky wording' and ensuring that the rules are clear and understandable for players. The updates aim to enhance the overall gameplay experience by making the rules and card effects more intuitive.",
+      "timestamp_seconds": 71
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker discusses the importance of clear and unambiguous card wording in a trading card game.",
+      "explanation": "The speaker explains that the initial wording of a card effect was misinterpreted by playtesters, leading to confusion. The card's effect involved moving objects through wormholes, but players misunderstood the range and movement mechanics. To address this, the speaker worked on revising the card's wording to make it more intuitive and self-explanatory. The speaker also mentions the challenge of fitting the text within the limited space on the card. The final wording was simplified to ensure it could only be interpreted in one way, aligning with the game's rules.",
+      "timestamp_seconds": 739
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker describes changes made to the terminology used on cards to improve readability.",
+      "explanation": "The speaker highlights that the original terminology on some cards was confusing and not intuitive. For example, the effect of the Galactic Alliance card was initially written as 'gained control of all planets under no players control,' which was deemed too complex. The speaker changed the terminology to use more straightforward terms like 'allied' for friendly units, 'enemy' for opponent's units, and 'neutral' for unexplored spaces. This change made the card effects easier to understand without altering the underlying rules.",
+      "timestamp_seconds": 965
+    }
+  ],
+  "model": "mistral-small"
+}

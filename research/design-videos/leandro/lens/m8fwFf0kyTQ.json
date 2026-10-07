@@ -1,0 +1,38 @@
+{
+  "video": {
+    "id": "m8fwFf0kyTQ",
+    "views": 3458,
+    "speaker": "Leandro",
+    "part": 7,
+    "title": "Let's Make a Trading Card Game: 7",
+    "duration_min": 11,
+    "published": "2015-02-16"
+  },
+  "summary": "The video documents the creator's ongoing development and testing of a trading card game, focusing on issues encountered during playtesting and adjustments made to the game's mechanics and design. The creator discusses changes to two-colored planets, the balance of cards, and the potential for live streams and future content.",
+  "overall_lesson": "Simplify complex mechanics for new players and ensure decks encourage strategic variety through balanced high-end cards.",
+  "takeaways": [
+    {
+      "point_index": 0,
+      "area": "Onboarding & complexity",
+      "implication": "Avoid overly complex resource management for new players. Simplify the tracking of resources, especially in multi-resource systems. Consider how new players will handle multiple resources and adjust accordingly.",
+      "relevance": "medium",
+      "main_point": "The creator identified and addressed complexity issues with two-colored planets in the game.",
+      "explanation": "The creator found that two-colored planets, which initially added one colored resource and one colorless resource, were too complicated for new players to track. This complexity was exacerbated when multiple such planets were in play. To simplify, the creator changed the planets to add specific colored resources without requiring players to choose, making it easier to keep track of resources. This change was tested and found to improve playability.",
+      "timestamp_seconds": 24,
+      "importance": "major"
+    },
+    {
+      "point_index": 1,
+      "area": "Costing & balance",
+      "implication": "Ensure that decks have a variety of high-end cards and coherent strategies to encourage more strategic play. Test decks to make sure they incentivize different approaches beyond straightforward attacks.",
+      "relevance": "high",
+      "main_point": "The creator discovered that players tended to use a straightforward strategy due to the lack of high-end cards and coherent strategies in the decks.",
+      "explanation": "During testing, it was observed that players primarily used a middle path to attack their opponent's home planet rather than exploring more spaces. This behavior was attributed to the decks being composed of common cards without high-end cards that would incentivize more strategic play. The creator noted that this lack of variety in strategies was partly due to the decks being a collection of common cards without a clear strategy.",
+      "timestamp_seconds": 263,
+      "importance": "major"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}

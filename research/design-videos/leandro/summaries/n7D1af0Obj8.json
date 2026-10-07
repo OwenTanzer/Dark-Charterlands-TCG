@@ -1,0 +1,33 @@
+{
+  "video_id": "n7D1af0Obj8",
+  "title": "Let's make a trading card game: 15",
+  "video_type": "Thesis Piece",
+  "summary": "The video discusses the development of a trading card game called Multiverse. The creator, Leandro, talks about the extensive work done on the card set, including creating distinct cards with unique interactions and strategies. He also shares insights from a recent playtest session, highlighting issues that need to be addressed and improvements to be made.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The creator has been working on creating a diverse and interactive set of cards for the trading card game Multiverse.",
+      "explanation": "Leandro has been focusing on making each card distinct with its own flavor and interactions. He has been fine-tuning six monocolor strategies and two-color combinations, which has been a lot of work. He mentions that the set needs to be able to function by itself, so he has been adding as much content as possible without making it too complex.",
+      "timestamp_seconds": 26
+    },
+    {
+      "importance": "major",
+      "main_point": "A recent playtest session revealed several issues that need to be addressed in the game.",
+      "explanation": "During the playtest, it became clear that some strategies, like the expansive strategy, did not have enough support. Additionally, certain cards and mechanics, such as the boarding mechanic and the cargo ability, were not tested thoroughly. The session also highlighted the need for more creatures and for game-changing cards to cost more.",
+      "timestamp_seconds": 422
+    },
+    {
+      "importance": "minor",
+      "main_point": "The creator plans to organize another test session before making any fixes.",
+      "explanation": "Leandro acknowledges that the recent playtest session was not as productive as previous ones due to the inclusion of new players who needed to learn the basics. He plans to organize another test session with the same cards to gather more data before making any changes.",
+      "timestamp_seconds": 819
+    },
+    {
+      "importance": "minor",
+      "main_point": "The game's length needs to be balanced, as previous iterations had games that were too long, while the current version has games that are too short.",
+      "explanation": "Leandro notes that finding the right balance for game length is challenging. Previous versions of the game had long matches, especially in mirror matches, while the current version has games that end too quickly. He needs to find a balance to ensure games are neither too long nor too short.",
+      "timestamp_seconds": 792
+    }
+  ],
+  "model": "mistral-small"
+}

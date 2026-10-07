@@ -1,0 +1,48 @@
+{
+  "video": {
+    "id": "3ysuCsg6ISs",
+    "views": 8173,
+    "speaker": "Leandro",
+    "part": 3,
+    "title": "Let's Make a Trading Card Game: 3",
+    "duration_min": 14,
+    "published": "2014-12-15"
+  },
+  "summary": "In this video, the host and a guest discuss the development of a trading card game, focusing on the creation of cards, balancing mechanics, and the impact of different strategies. They delve into the concept of 'impact' as a measure of a card's effectiveness and how it relates to resource costs and game turns.",
+  "overall_lesson": "The most important lesson for the team is to focus on balancing cards based on their impact and resource costs, considering the value of having cards in hand and the additional reward for waiting extra turns to play higher-cost cards.",
+  "takeaways": [
+    {
+      "point_index": 1,
+      "area": "Costing & balance",
+      "implication": "The team should develop a formula to balance cards based on their impact and resource cost. This formula should consider the value of having a card in hand and the additional reward for waiting an extra turn to play a higher-cost card. This will help ensure that cards are balanced and that their costs are appropriate for their effects.",
+      "relevance": "high",
+      "main_point": "The host introduces a formula to balance the cards based on their impact and resource cost.",
+      "explanation": "The host explains that the impact of a card is a measure of its effectiveness in the game. They propose that a card's impact should be equal to its resource cost minus a variable 'x', which represents the value of having a card in your hand. The host suggests that 'x' is likely around 0.5, but it can vary depending on the game's length. The host also discusses how waiting an extra turn to play a higher-cost card should provide an additional reward.",
+      "timestamp_seconds": 165,
+      "importance": "major"
+    },
+    {
+      "point_index": 2,
+      "area": "Costing & balance",
+      "implication": "The team should consider the impact of cards in relation to their resource costs and the number of turns it takes to play them. This means evaluating the overall effect of a card, not just its individual stats. Cards with higher resource costs should provide a greater reward to justify waiting additional turns.",
+      "relevance": "high",
+      "main_point": "The host discusses the concept of 'impact' and how it relates to resource costs and game turns.",
+      "explanation": "The host explains that the impact of a card is not directly related to its power, health, and speed but rather represents the whole effect that the card has. They also discuss how the impact of a card changes based on the number of resources it costs and the number of turns it takes to play. The host provides examples of how the impact of cards with different resource costs would change over the course of the game.",
+      "timestamp_seconds": 645,
+      "importance": "minor"
+    },
+    {
+      "point_index": 3,
+      "area": "Costing & balance",
+      "implication": "The team should design cards with different strategies in mind, understanding that aggressive and defensive strategies will affect the impact of cards differently over the course of the game. This means creating cards that are effective in various strategies and at different stages of the game.",
+      "relevance": "medium",
+      "main_point": "The host and guest discuss different strategies in the game, such as aggressive and defensive strategies, and how they affect the impact of cards.",
+      "explanation": "The host and guest discuss how different strategies in the game can affect the impact of cards. They mention that an aggressive strategy might have a higher impact at the beginning of the game but lose its advantage as the game progresses. A defensive strategy, on the other hand, might have a lower impact at the beginning but gain an advantage as the game goes on. The host also provides examples of how the impact of cards would change based on these strategies.",
+      "timestamp_seconds": 687,
+      "importance": "minor"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}

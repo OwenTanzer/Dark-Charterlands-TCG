@@ -1,0 +1,33 @@
+{
+  "video_id": "hskbmLDVGLE",
+  "title": "Let's make a trading card game: 13",
+  "video_type": "Thesis Piece",
+  "summary": "The video delves into the intricate process of developing a trading card game, highlighting the artistic creation of cards, the refinement of game mechanics, and the introduction of new card symbols. Additionally, it promotes an upcoming podcast episode, 'Conor Cast', hosted by Conor Linning, which explores game design, trading card games, and music.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The speaker is working on improving the game mechanics to prevent stalling and stalemates, particularly in multiplayer games and mirror matches.",
+      "explanation": "The speaker identifies two main issues causing slow gameplay: the low speed of ships and the lack of big, splashy effects that can turn the game in a player's favor. To address these, the speaker has increased the speed of ships across the board and plans to add more high-impact cards that require a lot of resources to use. Additionally, the speaker has changed how shields work to make them more accurate to science fiction depictions and to improve gameplay. The speaker also notes that having alternative win conditions helps mitigate the problem of games dragging on too long.",
+      "timestamp_seconds": 206
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker is collaborating with an artist to create card art, including a toxic planet and a mountainous planet, with iterative feedback to improve the designs.",
+      "explanation": "The speaker shows the initial and revised versions of the toxic planet art, highlighting the changes made based on feedback, such as adding more detail and adjusting the color to better reflect the card's hue. The speaker also discusses the process of creating the mountainous planet art, including the artist's initial joke about inverting the toxic planet image. The speaker expresses satisfaction with the final versions of the art and plans to use them for the cards.",
+      "timestamp_seconds": 26
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker is redesigning the color symbols for the game's cards to better represent the themes of each color.",
+      "explanation": "The speaker expresses dissatisfaction with the current color symbols, particularly for yellow, blue, purple, and orange, and plans to change them to better represent the themes of each color. For example, the speaker suggests using a scale for yellow to represent balance, an eye for blue to represent knowledge, a gas mask for purple to represent protection, and a hammer for orange to represent labor. The speaker also mentions that they are happy with the current symbols for green and red.",
+      "timestamp_seconds": 550
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker announces the upcoming release of the 'Conor Cast' podcast.",
+      "explanation": "The podcast, hosted by Conor Linning, will cover topics such as game design, trading card games, and music. The speaker mentions that the podcast will be available on Conor Linning's website and YouTube channel. The speaker also encourages viewers to subscribe to Conor Linning's channel and listen to his music.",
+      "timestamp_seconds": 721
+    }
+  ],
+  "model": "mistral-small"
+}

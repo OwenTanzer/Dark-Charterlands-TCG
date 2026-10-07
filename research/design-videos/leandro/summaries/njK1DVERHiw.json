@@ -1,0 +1,27 @@
+{
+  "video_id": "njK1DVERHiw",
+  "title": "Let's Make a Trading Card Game 25: Finding the right platform",
+  "video_type": "Thesis Piece",
+  "summary": "The video discusses the process of designing a platform for an online trading card game, focusing on the specific needs and challenges of such a game compared to other types of online games. The speaker explains the necessity of creating a custom platform tailored to the unique requirements of a trading card game, rather than adapting existing solutions designed for more graphically intensive games.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The speaker explains the need for a custom platform for an online trading card game.",
+      "explanation": "The speaker states that existing platforms like Unity and SmartFox, which are designed for 3D, physics-heavy games, are not suitable for a turn-based trading card game. These platforms have servers that are too heavy and expensive for the needs of a trading card game, which does not require complex graphics or simultaneous actions from many players. The speaker suggests that creating a custom platform specifically designed for trading card games would be more cost-effective and efficient.",
+      "timestamp_seconds": 287
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker describes the high-level design considerations for the trading card game platform.",
+      "explanation": "The speaker outlines the key components of the client-side design, including a deck builder, card collection manager, lobby for viewing and joining games, and a store for purchasing game items. The high-level design also considers the server setup, including the need for separate servers for each game to minimize costs and optimize performance. The speaker emphasizes the importance of learning about different platforms and engines to find the best fit for the game's requirements.",
+      "timestamp_seconds": 139
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker mentions the availability of the platform to backers on Kickstarter.",
+      "explanation": "The speaker states that the platform will be made available to backers who select it as a reward on their Kickstarter campaign. The platform will include components like the deck builder, store, lobby, and card manager, but the game logic will be customizable for different trading card games. The speaker expresses excitement about giving backers the opportunity to create their own online trading card games using this platform.",
+      "timestamp_seconds": 449
+    }
+  ],
+  "model": "mistral-small"
+}

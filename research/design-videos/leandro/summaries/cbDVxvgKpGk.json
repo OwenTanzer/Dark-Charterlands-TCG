@@ -1,0 +1,27 @@
+{
+  "video_id": "cbDVxvgKpGk",
+  "title": "Let's make a trading card game: 6",
+  "video_type": "Analytic Overview",
+  "summary": "The video discusses the first test session of a trading card game called 'Mothership,' highlighting the playability of the game, balance issues among different colors, and specific problems with certain cards and rules. The creator also shares plans for future test sessions and the development of a data model for a potential online version of the game.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The first test session of the trading card game 'Mothership' was successful, but balance issues were identified among different colors.",
+      "explanation": "The game was playable, and players won and lost as intended. However, the blue color was the strongest, followed by yellow, while green and red were weaker. The red color's weakness was partly due to players not using the deck correctly and not playing an aggressive strategy. The creator also noted that certain cards, like the 'corruptor' and a green creature with a powerful ability, were broken and needed adjustments.",
+      "timestamp_seconds": 26
+    },
+    {
+      "importance": "major",
+      "main_point": "Specific rules and card abilities were identified as problematic and will be adjusted for future test sessions.",
+      "explanation": "The rule preventing creatures from moving inside a structure and attacking on the same turn was changed because it slowed down the game. The range ability for creatures was also deemed impractical, as it allowed creatures to shoot at spaceships in space. The first strike ability was rarely relevant and will be replaced with an ability that allows creatures to deal damage while inside structures or ships. The creator plans to fix these issues in the next test session.",
+      "timestamp_seconds": 92
+    },
+    {
+      "importance": "minor",
+      "main_point": "The creator plans to test the game with new players who have never played trading card games before.",
+      "explanation": "The next test session will involve players who are new to trading card games to see how easily they can understand and learn the game. The creator also plans to test two-color decks, which were not tested in the first session. This will help in assessing the game's accessibility and balance.",
+      "timestamp_seconds": 225
+    }
+  ],
+  "model": "mistral-small"
+}

@@ -1,0 +1,33 @@
+{
+  "video_id": "SqHAjBrCJq0",
+  "title": "Let's make a trading card game:  20",
+  "video_type": "Pre-Market Brief",
+  "summary": "The video highlights the development and upcoming community play-testing of a new trading card game, Multiverse Cosmic Conquest, including details on new art, website launch, and card set updates. It emphasizes the importance of community feedback and offers incentives for active participants.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The company has launched a new website for their trading card game projects.",
+      "explanation": "The website is live and features information about the games 'Multiverse Cosmic Conquest' and 'Rebels Unite'. It includes descriptions, updates, and media related to the games. The website also has a community section for discussions and a store that is currently under development. The speaker expresses satisfaction with the website's design and functionality, noting that it helps gather all fans in one place.",
+      "timestamp_seconds": 62
+    },
+    {
+      "importance": "major",
+      "main_point": "Significant changes have been made to the card set for 'Multiverse Cosmic Conquest'.",
+      "explanation": "The speaker discusses the removal of uncommon colorless cards from the set, which were predominantly buildings. This change allows each color to have 10 uncommon cards instead of 9, which is important for limited gameplay and booster drafts. The speaker also mentions changes to void spaces, adding rules text to make them more useful in decks. Additionally, the speaker is considering a new community playtest session for the updated card set.",
+      "timestamp_seconds": 397
+    },
+    {
+      "importance": "minor",
+      "main_point": "New art for the 'Canyon Planet' has been created, featuring shiny layers of rock to give it an alien feel.",
+      "explanation": "The speaker describes the new art for the 'Canyon Planet', which produces red and yellow resources. The art includes shiny layers of rock to make it look more alien and less bland. The speaker also mentions that the original piece had a clear blue sky, which was changed to yellow or orange to enhance the alien feel.",
+      "timestamp_seconds": 18
+    },
+    {
+      "importance": "major",
+      "main_point": "A community play-testing session for Multiverse Cosmic Conquest is scheduled to start on March 14th and will run for 10 days.",
+      "explanation": "The session is designed to test the new version of the base set. Participants are encouraged to sign up on the website and post their color choice in a thread. On March 14th, all participants will receive the cards and the rulebook. The session will focus on constructive play, and participants will build decks using the cards of one color. The speaker suggests that this play-testing session is crucial for the game's development, as it allows for organized feedback and discussion among participants.",
+      "timestamp_seconds": 699
+    }
+  ],
+  "model": "mistral-small"
+}

@@ -1,0 +1,29 @@
+{
+    "video":  {
+                  "id":  "njK1DVERHiw",
+                  "views":  667,
+                  "speaker":  "Leandro",
+                  "part":  25,
+                  "title":  "Let\u0027s Make a Trading Card Game 25: Finding the right platform",
+                  "duration_min":  10,
+                  "published":  "2017-06-26"
+              },
+    "summary":  "The video discusses the process of designing a platform for an online trading card game, focusing on the specific needs and challenges of such a game compared to other types of online games. The speaker explains the necessity of creating a custom platform tailored to the unique requirements of a trading card game, rather than adapting existing solutions designed for more graphically intensive games.",
+    "overall_lesson":  "The most important lesson for the team is to focus on creating a clear and intuitive user interface for the physical components of the game, ensuring that players can easily understand and navigate the game.",
+    "takeaways":  [
+                      {
+                          "point_index":  1,
+                          "area":  "Business \u0026 distribution",
+                          "implication":  "The team should focus on creating a clear and intuitive user interface for the physical components, such as the deck builder and card collection manager, to ensure that players can easily understand and navigate the game. Since the game is physical, the design should prioritize ease of use and accessibility.",
+                          "relevance":  "low",
+                          "main_point":  "The speaker describes the high-level design considerations for the trading card game platform.",
+                          "explanation":  "The speaker outlines the key components of the client-side design, including a deck builder, card collection manager, lobby for viewing and joining games, and a store for purchasing game items. The high-level design also considers the server setup, including the need for separate servers for each game to minimize costs and optimize performance. The speaker emphasizes the importance of learning about different platforms and engines to find the best fit for the game\u0027s requirements.",
+                          "timestamp_seconds":  139,
+                          "importance":  "major"
+                      }
+                  ],
+    "model":  "mistral-small",
+    "pipeline_model":  "mistral-small",
+    "areas_reclassified":  true,
+    "area_classification_method":  "manual point review, 2026-10-06"
+}

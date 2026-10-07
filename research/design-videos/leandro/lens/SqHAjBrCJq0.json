@@ -1,0 +1,39 @@
+{
+    "video":  {
+                  "id":  "SqHAjBrCJq0",
+                  "views":  1091,
+                  "speaker":  "Leandro",
+                  "part":  20,
+                  "title":  "Let\u0027s Make a Trading Card Game: 20",
+                  "duration_min":  17,
+                  "published":  "2016-02-29"
+              },
+    "summary":  "The video highlights the development and upcoming community play-testing of a new trading card game, Multiverse Cosmic Conquest, including details on new art, website launch, and card set updates. It emphasizes the importance of community feedback and offers incentives for active participants.",
+    "overall_lesson":  "Organized play-testing and community feedback are crucial for balancing and refining the game, especially for a physical card game focused on booster drafts and multiplayer formats.",
+    "takeaways":  [
+                      {
+                          "point_index":  1,
+                          "area":  "Draft \u0026 set structure",
+                          "implication":  "Consider the distribution of uncommon cards and their impact on limited gameplay and booster drafts. Ensure that each faction has a balanced number of uncommon cards to maintain fairness and strategic depth in drafts.",
+                          "relevance":  "high",
+                          "main_point":  "Significant changes have been made to the card set for \u0027Multiverse Cosmic Conquest\u0027.",
+                          "explanation":  "The speaker discusses the removal of uncommon colorless cards from the set, which were predominantly buildings. This change allows each color to have 10 uncommon cards instead of 9, which is important for limited gameplay and booster drafts. The speaker also mentions changes to void spaces, adding rules text to make them more useful in decks. Additionally, the speaker is considering a new community playtest session for the updated card set.",
+                          "timestamp_seconds":  397,
+                          "importance":  "major"
+                      },
+                      {
+                          "point_index":  3,
+                          "area":  "Playtesting \u0026 metrics",
+                          "implication":  "Plan organized play-testing sessions to gather constructive feedback. Focus on the new version of the base set and encourage participants to build decks using specific factions to test balance and strategy.",
+                          "relevance":  "high",
+                          "main_point":  "A community play-testing session for Multiverse Cosmic Conquest is scheduled to start on March 14th and will run for 10 days.",
+                          "explanation":  "The session is designed to test the new version of the base set. Participants are encouraged to sign up on the website and post their color choice in a thread. On March 14th, all participants will receive the cards and the rulebook. The session will focus on constructive play, and participants will build decks using the cards of one color. The speaker suggests that this play-testing session is crucial for the game\u0027s development, as it allows for organized feedback and discussion among participants.",
+                          "timestamp_seconds":  699,
+                          "importance":  "major"
+                      }
+                  ],
+    "model":  "mistral-small",
+    "pipeline_model":  "mistral-small",
+    "areas_reclassified":  true,
+    "area_classification_method":  "manual point review, 2026-10-06"
+}

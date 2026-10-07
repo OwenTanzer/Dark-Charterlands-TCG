@@ -1,0 +1,69 @@
+{
+  "video_id": "U1W4VvCxlnc",
+  "title": "Let's Make a Trading Card Game: 28 - Kickstarter Lessons Learned & New Card Front",
+  "video_type": "Thesis Piece",
+  "summary": "The video explores the journey of developing a trading card game, initially titled 'Multiverse Cosmic Conquest', from its failed Kickstarter campaign to its redesign as a living card game. The creator discusses the lessons learned from the campaign's failures, the iterative design process of the card layout, and the adjustments made to the game's structure and content. The video also touches on future plans for the game and the creator's personal career developments.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The Kickstarter campaign for 'Multiverse Cosmic Conquest' failed due to the ineffectiveness of the hired PR and marketing agency.",
+      "explanation": "The agency failed to deliver on their promises, hindering the team's ability to contact media outlets for promotions. This resulted in minimal coverage and a delay in the Kickstarter launch date, further complicating promotional efforts. The contract with the agency included a clause that allowed the team to avoid payment for the undelivered work, which was a small consolation.",
+      "timestamp_seconds": 38
+    },
+    {
+      "importance": "major",
+      "main_point": "The lack of a physical prototype and the hybrid nature of the game made it difficult to get coverage from reviewers.",
+      "explanation": "Tabletop reviewers preferred physical prototypes, which the team did not have, while video game reviewers expected a demo with features like AI and tutorials. The game's online version, though playable, did not meet these expectations, leading to a lack of positive dialogue with reviewers. Additionally, board game reviewers generally dislike trading card games due to their ongoing purchase model, further limiting coverage.",
+      "timestamp_seconds": 269
+    },
+    {
+      "importance": "minor",
+      "main_point": "The team decided to pivot to a living card game format due to financial constraints and market realities.",
+      "explanation": "The online version of the game was deemed unfeasible due to lack of funds. The team realized that smaller, independent trading card games struggle in the market dominated by giants like Magic: The Gathering and Pok\u00e9mon. Therefore, they decided to release 'Multiverse Cosmic Conquest' as a living card game, which is sold in a single box with all cards included, making it easier to produce and distribute.",
+      "timestamp_seconds": 457
+    },
+    {
+      "importance": "minor",
+      "main_point": "The design of the card front was redesigned to address printing issues and maximize space.",
+      "explanation": "The initial design had issues with color frames causing cutting inaccuracies and a font that was too large. The team experimented with shrinking text and stats, adding a black border to mitigate cutting errors, and adjusting the layout to maximize the image size while maintaining text space. This redesign aimed to create a more visually appealing and functional card front.",
+      "timestamp_seconds": 727
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker iteratively redesigned the card layout to maximize image space and improve visual appeal.",
+      "explanation": "The speaker began by stretching the image to fit a square frame, aiming to make the card more visually pleasing. They experimented with different layouts, removing unnecessary lines and adjusting the placement of text and other elements to reduce clutter. The final design featured a larger, more square image area, with text and other information rearranged for better readability and aesthetic appeal. The speaker also discussed the challenges of integrating new designs with existing artwork and the decision to proceed with the new format despite some cards not fitting perfectly.",
+      "timestamp_seconds": 822
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker decided to transition the game from a trading card format to a living card game format.",
+      "explanation": "The speaker explains that the transition involves more than just a name change; it affects the entire card set. The new format will not include rarities, and each card will be designed as an equal part of the set rather than in relation to draft or limited environments. This change allows for more complex cards to replace certain commons, making the entire set more cohesive. The speaker also mentions the removal of colorless cards, which were primarily used for draft and sealed purposes.",
+      "timestamp_seconds": 1541
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker encountered and resolved several design issues, such as color problems and text placement.",
+      "explanation": "During the design process, the speaker noticed that the colors in the new layout were muddy and not as vibrant as intended. They adjusted the opacity of certain layers to fix this issue. Additionally, the speaker addressed the problem of text being too close to the edge of the card, which looked unappealing. They centered the text better and ensured there was adequate space around it.",
+      "timestamp_seconds": 931
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker discussed the challenges of integrating new designs with existing artwork.",
+      "explanation": "The speaker mentioned that many images were already drawn to fit the old format, and the new square-like format would require redrawing or cutting parts of the images. They consulted with illustrators, and despite some cards not fitting perfectly with the new format, they decided to proceed with the change because it looked better overall. The speaker also showed examples of new illustrations that fit the updated format.",
+      "timestamp_seconds": 1212
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker learned valuable lessons from the printing experience.",
+      "explanation": "The speaker reflected on the printing experience, noting that failure can be a good teacher. They learned about issues like color bleeding and text placement, which informed their design decisions. The speaker also mentioned that the new Star Wars movie emphasizes the value of learning from failure, which resonated with their own experience.",
+      "timestamp_seconds": 1526
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker is making changes to the card game Multiverse, including adjusting the number of cards per color and adding a new rare card.",
+      "explanation": "The speaker explains that they are removing six cards from the game, which will result in each color having 31 cards instead of 30. This change allows for the addition of a new rare card. The speaker also mentions that there are other mathematical changes but will explain them in a different video. The speaker suggests that Multiverse is evolving into a living card game.",
+      "timestamp_seconds": 1750
+    }
+  ],
+  "model": "mistral-small"
+}

@@ -1,0 +1,27 @@
+{
+  "video_id": "fEUcOnj2bYs",
+  "title": "Let's make a trading card game 23: Launch of the Multiverse Online Beta!",
+  "video_type": "Thesis Piece",
+  "summary": "The video is an announcement and promotional piece for the upcoming game 'Multiverse Cosmic Congress', highlighting the launch of its online beta, a virtual tabletop simulator, and significant gameplay updates. The speaker emphasizes the potential of the game and encourages viewers to support an upcoming Kickstarter campaign and stay tuned for further developments.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The Multiverse Online Beta has launched, utilizing a virtual tabletop simulator called Octagon.",
+      "explanation": "The speaker introduces Octagon, a virtual tabletop simulator that allows players to engage in various games with people around the world. This simulator replaces the previous clunky testing sessions where physical cards had to be printed and cut out. Octagon ensures that players always have the newest version of the card set and provides access to the entire collection of cards, enabling the creation of diverse decks with different strategies.",
+      "timestamp_seconds": 10
+    },
+    {
+      "importance": "major",
+      "main_point": "Significant gameplay changes have been made, including updates to cargo and shield abilities.",
+      "explanation": "The speaker highlights two major changes to the game: the cargo and shield abilities. Cargo is now scalable, allowing ships and units to carry varying amounts of resources, which adds depth to gameplay. Shields have also been updated to provide constant protection against damage, preventing the first X damage dealt to the object each turn. These changes aim to enhance the strategic and interactive aspects of the game.",
+      "timestamp_seconds": 80
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker is seeking support for the game 'Multiverse Cosmic Congress' through a Kickstarter campaign.",
+      "explanation": "The speaker directly asks viewers to pledge and support the game on Kickstarter, stating that with their help, the game can be made the best it can be. The speaker also mentions that there are many worlds waiting to be designed, implying that the game has a vast scope and potential.",
+      "timestamp_seconds": 661
+    }
+  ],
+  "model": "mistral-small"
+}

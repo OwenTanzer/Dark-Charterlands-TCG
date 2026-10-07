@@ -1,0 +1,27 @@
+{
+  "video_id": "EMz-6GKb20o",
+  "title": "Let's make a trading card game: 9",
+  "video_type": "Thesis Piece",
+  "summary": "The video details the creation and balancing of a trading card game set, including the distribution of cards by rarity and strategy, and the unique mechanics and races associated with each color strategy. The creator also discusses plans for testing the game and gathering feedback from subscribers.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The game set consists of 200 Arsenal cards and 14 Galaxy cards, with a specific rarity distribution to balance the game.",
+      "explanation": "The set includes 100 common cards, 60 uncommon cards, and 40 rare cards. The Galaxy cards include 10 planets, an asteroid field, a nebula, a void, and a wormhole. The rarity distribution is designed to make uncommon cards twice as rare as common cards, and rare cards twice as rare as uncommon cards. This distribution ensures that the probability of drawing specific cards aligns with their rarity, affecting gameplay balance.",
+      "timestamp_seconds": 32
+    },
+    {
+      "importance": "major",
+      "main_point": "The game features 10 monocolored strategies and 6 two-colored strategies, each with unique mechanics and races.",
+      "explanation": "Each color strategy has its own playstyle and strengths. For example, the red strategy focuses on fast creatures and direct damage, while the blue strategy is defensive and card-drawing. The two-colored strategies offer more complex interactions and can combine the strengths of their constituent colors. The creator has designed specific races for each strategy, such as minur people for red and squids for blue.",
+      "timestamp_seconds": 99
+    },
+    {
+      "importance": "minor",
+      "main_point": "The creator has sent out monocolor decks to subscribers for testing and feedback.",
+      "explanation": "The creator has created four monocolor decks and sent them to subscribers for testing. This testing phase is crucial for gathering feedback and ensuring the game's balance. Subscribers who have not yet received a deck can still apply by sending an email to the creator. The feedback from this testing phase will be instrumental in refining the game's mechanics and balance.",
+      "timestamp_seconds": 536
+    }
+  ],
+  "model": "mistral-small"
+}

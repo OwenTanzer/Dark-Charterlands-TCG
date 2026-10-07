@@ -1,0 +1,28 @@
+{
+  "video": {
+    "id": "COEQSmTIRTY",
+    "views": 1319,
+    "speaker": "Leandro",
+    "part": 17,
+    "title": "Let's Make a Trading Card Game: 17",
+    "duration_min": 11,
+    "published": "2015-11-14"
+  },
+  "summary": "The video discusses the development of a trading card game called Multiverse. The creator outlines plans for playtesting the game, describes updates to the game's design and artwork, and details the process of balancing and testing the game's cards.",
+  "overall_lesson": "Conduct thorough internal testing to identify and address balance issues before wider playtesting.",
+  "takeaways": [
+    {
+      "point_index": 2,
+      "area": "Playtesting & metrics",
+      "implication": "The team should conduct internal testing of Dark Charterlands' cards to identify any balance issues before wider playtesting. Pay special attention to factions that might be underpowered or overpowered, and adjust their cards accordingly. Ensure that each faction has viable strategies and moments of success.",
+      "relevance": "high",
+      "main_point": "The creator has conducted internal testing of the game's cards and found the results to be positive overall, with some balance issues to address.",
+      "explanation": "The creator prepared six decks, each representing a different color, and tested them against each other. The results were positive, with each color having its moments of success. However, some balance issues were identified, such as the orange color being too slow and weak, and certain structures being too strong. The creator plans to fix these issues before sending the cards to playtesters.",
+      "timestamp_seconds": 532,
+      "importance": "minor"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}

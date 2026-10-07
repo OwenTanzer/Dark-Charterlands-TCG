@@ -46,10 +46,13 @@ def find_browser() -> str:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", type=Path, default=HERE / "DIGEST.pdf")
+    ap.add_argument("--set", default=None, help="Video set subfolder, e.g. leandro")
+    ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
-    body = markdown.markdown((HERE / "DIGEST.md").read_text(encoding="utf-8"), extensions=["tables", "sane_lists"])
-    html = f"<!doctype html><html><head><meta charset='utf-8'><title>Dark Charterlands: TCG design video digest</title><style>{CSS}</style></head><body>{body}</body></html>"
+    data = HERE / args.set if args.set else HERE
+    args.out = args.out or data / "DIGEST.pdf"
+    body = markdown.markdown((data / "DIGEST.md").read_text(encoding="utf-8"), extensions=["tables", "sane_lists"])
+    html = f"<!doctype html><html><head><meta charset='utf-8'><title>Dark Charterlands: video digest</title><style>{CSS}</style></head><body>{body}</body></html>"
     with tempfile.TemporaryDirectory() as tmp:
         page = Path(tmp) / "digest.html"
         page.write_text(html, encoding="utf-8")

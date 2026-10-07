@@ -1,0 +1,57 @@
+{
+  "video_id": "bqiwYSGOXD0",
+  "title": "Let's Make a Trading Card Game: 22",
+  "video_type": "Thesis Piece",
+  "summary": "The video explores the development process of a trading card game, Multiverse, focusing on playtesting challenges, gameplay mechanics, and design decisions. It also covers plans for a Kickstarter campaign to fund both physical and digital versions of the game.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The previous playtesting session for Multiverse was poorly organized and lacked a practical way to play the game online.",
+      "explanation": "The speaker describes the last playtesting session as a 'train wreck' due to poor planning and the lack of a suitable online platform. Volunteers were given cards to build decks, but playing the game was problematic because it required a shared galaxy and a way to shuffle and distribute cards between players on separate sides of the planet. The session was unhelpful, but it provided valuable lessons for future testing.",
+      "timestamp_seconds": 12
+    },
+    {
+      "importance": "major",
+      "main_point": "A new program is being developed to facilitate online playtesting of Multiverse.",
+      "explanation": "The speaker mentions that a new program is being developed to allow testers to connect with other players and play games of Multiverse. This program will include an in-game chat and will support organized games and small tournaments. The speaker expects the next playtest session to happen in about two to three weeks.",
+      "timestamp_seconds": 127
+    },
+    {
+      "importance": "minor",
+      "main_point": "The boarding mechanic in the game needs to be adjusted to improve gameplay.",
+      "explanation": "The speaker discusses the boarding mechanic, which was initially an ability of all units but is being changed to a keyword ability. This change will make the game more streamlined and reduce unnecessary complexity. The speaker also notes that boarding should be a property of ships rather than units, which aligns better with the game's space theme and adds diversity to ships.",
+      "timestamp_seconds": 270
+    },
+    {
+      "importance": "minor",
+      "main_point": "The art department has completed the galaxy cards, and additional artists have been recruited to draw the remaining cards.",
+      "explanation": "The speaker mentions that the art department has completed the galaxy cards, and additional artists have been recruited to draw the remaining 200 cards. The speaker is pleased with the progress and the quality of the art, noting that the artists are skilled and that the project is manageable despite the challenges.",
+      "timestamp_seconds": 542
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker considers two main approaches to handling movement abilities for ships and structures in the game.",
+      "explanation": "The first approach involves adding a rule that ships by default have the ability to fly, while non-ship units do not. The second approach suggests that all structures can fly by default, with specific structures needing a 'stationary' keyword to indicate they cannot move. The speaker is open to feedback on which approach is better.",
+      "timestamp_seconds": 792
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker decides to remove activated abilities from the current set of cards.",
+      "explanation": "Activated abilities are those that can be activated by paying a certain cost. The speaker found that these abilities did not add much to the gameplay and were often extra fluff on the cards. Removing them will streamline the gameplay and provide a slightly easier entrance point for new players.",
+      "timestamp_seconds": 910
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker introduces the concept of 'reactions' to add tension to gameplay.",
+      "explanation": "Reactions can be played on your turn and in response to specific events, such as an attack being declared or an opponent moving a unit onto your space. This adds a surprise factor to battles and keeps both players more alert during the opponent's turn. The speaker is still evaluating how this will work in multiplayer.",
+      "timestamp_seconds": 1066
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker announces plans for a Kickstarter campaign to fund both physical and digital versions of the game.",
+      "explanation": "The Kickstarter campaign is planned for March 2017 at the latest. The funds will be used to develop both a physical and a digital version of the game, with the digital version initially targeting Android and iPhone platforms. The speaker encourages viewers to spread the word about the game to increase the chances of a successful Kickstarter.",
+      "timestamp_seconds": 1252
+    }
+  ],
+  "model": "mistral-small"
+}

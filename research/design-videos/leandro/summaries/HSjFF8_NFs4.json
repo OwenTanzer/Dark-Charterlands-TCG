@@ -1,0 +1,45 @@
+{
+  "video_id": "HSjFF8_NFs4",
+  "title": "Let's make a trading card game: 19",
+  "video_type": "Post-Market Update",
+  "summary": "The video provides an update on the development of the trading card game 'Multiverse', highlighting new website features, card art updates, and gameplay enhancements. It also delves into the testing and balancing of game mechanics, with a focus on quick actions and creature renaming, and shares insights from test sessions.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The website for the trading card game 'Multiverse' is being redesigned to serve as a hub for all games and products.",
+      "explanation": "The speaker explains that the new website will provide a centralized location for information on all games, including 'Multiverse', and will feature quick access to various video series and live streams. The homepage will display the latest updates and news, similar to what is currently posted on Facebook. The website will also include forums for community discussions and a section for purchasing merchandise and game products.",
+      "timestamp_seconds": 11
+    },
+    {
+      "importance": "major",
+      "main_point": "New card art for the planets in 'Multiverse' has been developed, including a lush green rainforest planet and a geyser planet.",
+      "explanation": "The speaker describes the art for two planets: one is a lush green rainforest with waterfalls, lakes, and rivers, producing blue and green resources. The other is a geyser planet with toxic fumes and bursts of hot water, producing red and violet resources. The art is designed to reflect the strategy and aesthetics of the game's color combinations.",
+      "timestamp_seconds": 296
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker is testing new 'quick action' cards to add elements of surprise and bluffing to the game.",
+      "explanation": "The speaker introduces the concept of 'quick actions' which are instantaneous effects that can be played during the game. These actions are being tested to determine the best rules for their implementation without slowing down gameplay. Three different rule sets are proposed, each allowing quick actions to be played under different conditions, such as during an opponent's turn or in response to specific actions.",
+      "timestamp_seconds": 409
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker has set up a company called Talk Arts to own the rights to all the games.",
+      "explanation": "The speaker mentions that a company called Talk Arts has been established to own the rights to all the games being developed. This company will oversee the intellectual property and legal aspects of the games.",
+      "timestamp_seconds": 66
+    },
+    {
+      "importance": "major",
+      "main_point": "The game's quick actions need to be balanced to avoid slowing down gameplay.",
+      "explanation": "The speaker notes that quick actions, initially designed to be used in specific situations, are not always useful and can slow down the game. They experimented with different rules for when quick actions can be played, finding that allowing them during any movement or attack in the galaxy works better for multiplayer games. The speaker also mentions that quick actions still need to be tested in multiplayer variants but are already adding depth to the gameplay without significantly slowing it down.",
+      "timestamp_seconds": 782
+    },
+    {
+      "importance": "minor",
+      "main_point": "The term 'creatures' is being renamed to 'units' for clarity and consistency.",
+      "explanation": "The speaker decides to rename 'creatures' to 'units' to better encompass all types of game entities, including robots. This change is motivated by the realization that robots, while not living beings, function similarly to creatures in gameplay. The speaker also notes that the ability of robots to survive in outer space has never been a relevant factor in gameplay, making the distinction unnecessary.",
+      "timestamp_seconds": 960
+    }
+  ],
+  "model": "mistral-small"
+}

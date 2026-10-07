@@ -43,3 +43,9 @@ the other 10 with the smaller pieces.
   Check anything important against the linked timestamp.
 - The brief inside `apply_lens.py` mirrors `docs/design/core-gameplay-loop.md`. Update it
   when the design changes, then run `apply_lens.py --redo` followed by `--reclassify`.
+
+## Leandro's 28-part series
+
+The separate [Leandro digest](leandro/DIGEST.md) ([PDF](leandro/DIGEST.pdf)) contains 86 retained, timestamped takeaways. Parts 1 and 10 used local Whisper transcripts because captions were unavailable. The *For us* lines are model suggestions, and ten area files were classified by manual point review after the interrupted run. The raw transcripts in `leandro/transcripts/` are local working files; do not publish them.
+
+Run `python apply_lens.py --set leandro --digest-only` then `python build_pdf.py --set leandro` to regenerate from the lens files.

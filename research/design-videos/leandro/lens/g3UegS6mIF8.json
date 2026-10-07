@@ -1,0 +1,59 @@
+{
+    "video":  {
+                  "id":  "g3UegS6mIF8",
+                  "views":  4584,
+                  "speaker":  "Leandro",
+                  "part":  27,
+                  "title":  "Let\u0027s Make a Trading Card Game: 27 - Card Art Creation Process \u0026 Card Front Design",
+                  "duration_min":  22,
+                  "published":  "2017-12-01"
+              },
+    "summary":  "The video explores the intricate process of designing artwork and layouts for a trading card game, emphasizing the collaborative efforts between creators and illustrators, and the importance of clear, intuitive design for an enhanced user experience. It delves into the detailed description and iterative refinement of each card, as well as the strategic placement of text, cost, and stats boxes on the card front.",
+    "overall_lesson":  "The most important lesson from this video is the importance of clear, intuitive design for an enhanced user experience, which will help new players understand the game and make informed decisions.",
+    "takeaways":  [
+                      {
+                          "point_index":  1,
+                          "area":  "Card \u0026 mechanic design",
+                          "implication":  "Ensure that the descriptions for each card in Dark Charterlands are detailed and clear, including color schemes, environments, and the focus of the card. This will help illustrators create artwork that accurately reflects the card\u0027s abilities and types, making it easier for new players to understand the game.",
+                          "relevance":  "medium",
+                          "main_point":  "The video describes the detailed description process for each card, which includes specifying the color scheme, environment, focus, and ability of the card.",
+                          "explanation":  "Leandro provides a detailed description for each card, which includes the color scheme, environment, focus, and ability of the card. For example, the description for the Spice Smuggler card includes details about the ship, the smuggler\u0027s actions, and the effect of the card. This description is translated into English for the video but is normally written in Russian for the illustrators. The color scheme is important because the front of the card becomes a frame for the artwork, and there are seven different variations of the front of the card. The environment is described in detail, including the background and any relevant objects. The focus of the card is the main subject, in this case, the human smuggler, and the description includes details about the smuggler\u0027s actions and the effect of the card.",
+                          "timestamp_seconds":  94,
+                          "importance":  "major"
+                      },
+                      {
+                          "point_index":  2,
+                          "area":  "Card \u0026 mechanic design",
+                          "implication":  "Establish a clear iterative process for refining artwork in Dark Charterlands, involving initial sketches, working progress, and final illustrations. This will ensure that the artwork is of high quality and accurately represents the card\u0027s abilities and types.",
+                          "relevance":  "medium",
+                          "main_point":  "The video outlines the iterative process of refining the artwork, involving initial sketches, working progress, and final illustrations.",
+                          "explanation":  "The process of creating the artwork involves several stages. Initially, the illustrator creates one or more sketches based on the description provided. These sketches are reviewed, and feedback is given. For example, Max Palchikov\u0027s initial sketch for the Spice Smuggler card is reviewed, and suggestions are made to improve the composition and the positioning of the hand. The illustrator then creates a working progress image, which is discussed further. In this stage, specific issues, such as the positioning of the hand, are addressed. The final illustration is created after incorporating all the feedback and making necessary adjustments.",
+                          "timestamp_seconds":  318,
+                          "importance":  "minor"
+                      },
+                      {
+                          "point_index":  3,
+                          "area":  "Onboarding \u0026 complexity",
+                          "implication":  "Design the card front in Dark Charterlands to be clean and easy to read, with the image of the card\u0027s subject prominently displayed. Arrange text and visual elements in a logical order, with the name of the card at the top, followed by the type line, text box, cost and stats, and additional information at the bottom.",
+                          "relevance":  "high",
+                          "main_point":  "The video explains the design of the card front, including the layout of text and visual elements, and the creation of different color variations.",
+                          "explanation":  "The design of the card front involves arranging various text and visual elements. The name of the card is placed at the top, followed by the type line, which includes the type and subtypes of the card. The text box contains all the effects and flavor text of the card. The cost and stats are placed below the text box. The rarity and additional information, such as copyright and illustrator credits, are placed at the bottom. The creator designed the card front to be clean and easy to read, with the image of the card\u0027s subject prominently displayed. To create different color variations, the creator used a base design and switched out the background color for each variation.",
+                          "timestamp_seconds":  609,
+                          "importance":  "minor"
+                      },
+                      {
+                          "point_index":  4,
+                          "area":  "Onboarding \u0026 complexity",
+                          "implication":  "Use separate symbols for each resource in Dark Charterlands to avoid confusion, especially for those unfamiliar with the game. Design the card layout to clearly show the cost and stats of each card, with higher costs moving to the bottom row. Ensure that the design allows for cards with costs up to 12 resources, although no cards currently cost 12.",
+                          "relevance":  "high",
+                          "main_point":  "The speaker designed the card layout to clearly display cost and stats, using separate symbols for each resource to avoid confusion.",
+                          "explanation":  "The speaker explains that the card layout is designed to clearly show the cost and stats of each card. Separate symbols are used for each resource to avoid confusion, especially for those unfamiliar with the game. The cost symbols are positioned based on the card\u0027s cost, with higher costs moving to the bottom row. The stack box is removable for action cards that do not have stats. The speaker also mentions that the design allows for cards with costs up to 12 resources, although no cards currently cost 12.",
+                          "timestamp_seconds":  829,
+                          "importance":  "major"
+                      }
+                  ],
+    "model":  "mistral-small",
+    "pipeline_model":  "mistral-small",
+    "areas_reclassified":  true,
+    "area_classification_method":  "manual point review, 2026-10-06"
+}

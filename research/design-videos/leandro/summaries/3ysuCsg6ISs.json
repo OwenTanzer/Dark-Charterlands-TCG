@@ -1,0 +1,33 @@
+{
+  "video_id": "3ysuCsg6ISs",
+  "title": "Let's make a trading card game: 3",
+  "video_type": "Thesis Piece",
+  "summary": "In this video, the host and a guest discuss the development of a trading card game, focusing on the creation of cards, balancing mechanics, and the impact of different strategies. They delve into the concept of 'impact' as a measure of a card's effectiveness and how it relates to resource costs and game turns.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The host and guest are collaborating on creating a trading card game, with the guest focusing on drawing basic planets and the host on designing cards and databases.",
+      "explanation": "The host mentions that the guest, Vasili, is working on drawing the basic planets for the game. The host has been trying to create a set of cards with all the rarity costs figured out but realizes that rarity is not important at this stage. Instead, the host decides to create a batch of cards to test with, aiming for 40 different cards for every color. The host also mentions that they need to properly cost the cards to ensure they are balanced.",
+      "timestamp_seconds": 30
+    },
+    {
+      "importance": "major",
+      "main_point": "The host introduces a formula to balance the cards based on their impact and resource cost.",
+      "explanation": "The host explains that the impact of a card is a measure of its effectiveness in the game. They propose that a card's impact should be equal to its resource cost minus a variable 'x', which represents the value of having a card in your hand. The host suggests that 'x' is likely around 0.5, but it can vary depending on the game's length. The host also discusses how waiting an extra turn to play a higher-cost card should provide an additional reward.",
+      "timestamp_seconds": 165
+    },
+    {
+      "importance": "minor",
+      "main_point": "The host discusses the concept of 'impact' and how it relates to resource costs and game turns.",
+      "explanation": "The host explains that the impact of a card is not directly related to its power, health, and speed but rather represents the whole effect that the card has. They also discuss how the impact of a card changes based on the number of resources it costs and the number of turns it takes to play. The host provides examples of how the impact of cards with different resource costs would change over the course of the game.",
+      "timestamp_seconds": 645
+    },
+    {
+      "importance": "minor",
+      "main_point": "The host and guest discuss different strategies in the game, such as aggressive and defensive strategies, and how they affect the impact of cards.",
+      "explanation": "The host and guest discuss how different strategies in the game can affect the impact of cards. They mention that an aggressive strategy might have a higher impact at the beginning of the game but lose its advantage as the game progresses. A defensive strategy, on the other hand, might have a lower impact at the beginning but gain an advantage as the game goes on. The host also provides examples of how the impact of cards would change based on these strategies.",
+      "timestamp_seconds": 687
+    }
+  ],
+  "model": "mistral-small"
+}

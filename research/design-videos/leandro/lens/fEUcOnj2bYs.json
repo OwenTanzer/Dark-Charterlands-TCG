@@ -1,0 +1,29 @@
+{
+    "video":  {
+                  "id":  "fEUcOnj2bYs",
+                  "views":  842,
+                  "speaker":  "Leandro",
+                  "part":  23,
+                  "title":  "Let\u0027s Make a Trading Card Game 23: Launch of the Multiverse Online Beta!",
+                  "duration_min":  12,
+                  "published":  "2016-11-08"
+              },
+    "summary":  "The video is an announcement and promotional piece for the upcoming game \u0027Multiverse Cosmic Congress\u0027, highlighting the launch of its online beta, a virtual tabletop simulator, and significant gameplay updates. The speaker emphasizes the potential of the game and encourages viewers to support an upcoming Kickstarter campaign and stay tuned for further developments.",
+    "overall_lesson":  "Adapting abilities to add depth and strategic choices can enhance gameplay, so consider how similar mechanics can be integrated into Dark Charterlands.",
+    "takeaways":  [
+                      {
+                          "point_index":  1,
+                          "area":  "Card \u0026 mechanic design",
+                          "implication":  "Consider how abilities like cargo and shields can be adapted to Dark Charterlands to add depth to gameplay. For example, units with scalable cargo abilities could carry varying amounts of Seals (the resource), and shields could protect units from the first X damage each turn, enhancing strategic decisions.",
+                          "relevance":  "medium",
+                          "main_point":  "Significant gameplay changes have been made, including updates to cargo and shield abilities.",
+                          "explanation":  "The speaker highlights two major changes to the game: the cargo and shield abilities. Cargo is now scalable, allowing ships and units to carry varying amounts of resources, which adds depth to gameplay. Shields have also been updated to provide constant protection against damage, preventing the first X damage dealt to the object each turn. These changes aim to enhance the strategic and interactive aspects of the game.",
+                          "timestamp_seconds":  80,
+                          "importance":  "major"
+                      }
+                  ],
+    "model":  "mistral-small",
+    "pipeline_model":  "mistral-small",
+    "areas_reclassified":  true,
+    "area_classification_method":  "manual point review, 2026-10-06"
+}

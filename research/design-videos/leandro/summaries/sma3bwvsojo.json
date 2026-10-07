@@ -1,0 +1,27 @@
+{
+  "video_id": "sma3bwvsojo",
+  "title": "Let's make a trading card game: 11",
+  "video_type": "Thesis Piece",
+  "summary": "The video discusses the development of a trading card game called Multiverse TCG. The creator shares updates on the game's logo, card design, and gameplay mechanics. He also talks about plans to create a website for the game, detailing the features and structure of the site.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The creator has made significant progress on the game's logo and card design, and is excited about the game's potential.",
+      "explanation": "The creator has finished the logo and card back for a multiverse card, which can now be used as a promotional image. He mentions that having a logo makes the game feel more real and finished. He also discusses the design of the card, including the placement of the name, illustration, and other elements. The creator is excited about the game's potential and the progress made so far.",
+      "timestamp_seconds": 4
+    },
+    {
+      "importance": "major",
+      "main_point": "The creator has identified a strategic issue in the game and is considering changes to the rules to encourage more exploration.",
+      "explanation": "The creator has been testing the game and has found that the best strategy is to fly straight to the opponent's planet and conquer it as fast as possible, rather than exploring the galaxy. He has tried to support more expansive strategies by giving bonuses for exploration, but he realized he was approaching the problem from the wrong angle. He is considering changing the goal of the game to include multiple ways of winning, such as conquering the opponent's home planet or conquering 10 planets in the galaxy.",
+      "timestamp_seconds": 45
+    },
+    {
+      "importance": "minor",
+      "main_point": "The creator is planning to launch a website for the game, detailing the features and structure of the site.",
+      "explanation": "The creator mentions that he is planning to create a website for Multiverse TCG. He discusses the features he wants on the website, including a banner with the logo, a long menu with different pages, a news feed, game info, an archive of videos, photos, and articles, forums for discussion, a feedback section, an about us page, and a login feature for the newsletter. He is excited about the potential of the website to promote the game and build a community.",
+      "timestamp_seconds": 201
+    }
+  ],
+  "model": "mistral-small"
+}

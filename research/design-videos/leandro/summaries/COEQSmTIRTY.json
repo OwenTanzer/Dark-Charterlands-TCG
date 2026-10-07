@@ -1,0 +1,27 @@
+{
+  "video_id": "COEQSmTIRTY",
+  "title": "Let's make a trading card game: 17",
+  "video_type": "Thesis Piece",
+  "summary": "The video discusses the development of a trading card game called Multiverse. The creator outlines plans for playtesting the game, describes updates to the game's design and artwork, and details the process of balancing and testing the game's cards.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The creator is seeking playtesters for the trading card game Multiverse and offers various engagement opportunities.",
+      "explanation": "The creator invites subscribers to playtest the game and provides options for more interactive feedback, such as filming gameplay sessions or participating in Skype calls. This engagement is intended to gather more useful feedback than text-based input. The creator also mentions the possibility of featuring playtesters in future episodes.",
+      "timestamp_seconds": 16
+    },
+    {
+      "importance": "major",
+      "main_point": "The game's design and artwork are being updated, with a focus on creating a cohesive and recognizable set of cards.",
+      "explanation": "The creator has started working on a new version of the base set, incorporating well-known science fiction and space fantasy elements. The artwork for a gas planet was initially problematic but was changed to floating islands, which better fit the game's theme. The creator also discusses the process of filling in gaps with new cards and ensuring that the game's strategies work within the colors.",
+      "timestamp_seconds": 122
+    },
+    {
+      "importance": "minor",
+      "main_point": "The creator has conducted internal testing of the game's cards and found the results to be positive overall, with some balance issues to address.",
+      "explanation": "The creator prepared six decks, each representing a different color, and tested them against each other. The results were positive, with each color having its moments of success. However, some balance issues were identified, such as the orange color being too slow and weak, and certain structures being too strong. The creator plans to fix these issues before sending the cards to playtesters.",
+      "timestamp_seconds": 532
+    }
+  ],
+  "model": "mistral-small"
+}

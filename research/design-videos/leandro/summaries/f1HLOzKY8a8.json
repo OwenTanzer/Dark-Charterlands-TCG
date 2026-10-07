@@ -1,0 +1,27 @@
+{
+  "video_id": "f1HLOzKY8a8",
+  "title": "Let's make a trading card game: 2",
+  "video_type": "Thesis Piece",
+  "summary": "The video is a continuation of a series where the creator is designing a trading card game set in space. The creator discusses the initial list of cards, their rarity, and the basic structure of the game, including different types of cards and their roles. The creator also talks about the design process and the challenges faced while creating the cards.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The creator outlines the initial list of cards and their roles in the game.",
+      "explanation": "The creator has made a list of cards that are essential for a space adventure game, including roles like engineer, scientist, doctor, pilot, robot pilot, astronomer, and captain. Each card has a certain identity and fits a certain color, such as blue, green, yellow, or red. The creator also mentions that the game will have 200 cards in total, divided into Commons, Uncommons, and Rares, with each rarity serving a specific purpose in the game.",
+      "timestamp_seconds": 10
+    },
+    {
+      "importance": "major",
+      "main_point": "The creator discusses the structure and design process of the game, including the distribution of card types and colors.",
+      "explanation": "The creator explains that the game will have 40% creatures, 30% ships, 20% actions, and 10% buildings. These cards are divided into different colors, with each color having a specific number of Commons, Uncommons, and Rares. The creator also mentions that they will design each color individually to ensure clear strategies. Additionally, the creator discusses the concept of Galaxy cards, which are separate from the main deck and are used to construct the game board.",
+      "timestamp_seconds": 125
+    },
+    {
+      "importance": "minor",
+      "main_point": "The creator explores the concept of Galaxy cards and their role in the game.",
+      "explanation": "Galaxy cards are a fourth type of card that are not part of the main deck. They include planets and other galactic elements that players use to construct a 10-card deck. These decks are shuffled with the opponent's deck and distributed throughout the game board. The creator discusses different types of Galaxy cards, such as volcanic planets, forest planets, storm planets, and rocky planets, each providing different resources. The creator also mentions other potential Galaxy cards like asteroids, nebulae, black holes, and voids, each with unique effects.",
+      "timestamp_seconds": 274
+    }
+  ],
+  "model": "mistral-small"
+}

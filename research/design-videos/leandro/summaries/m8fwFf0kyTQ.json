@@ -1,0 +1,27 @@
+{
+  "video_id": "m8fwFf0kyTQ",
+  "title": "Let's make a trading card game: 7",
+  "video_type": "Analytic Overview",
+  "summary": "The video documents the creator's ongoing development and testing of a trading card game, focusing on issues encountered during playtesting and adjustments made to the game's mechanics and design. The creator discusses changes to two-colored planets, the balance of cards, and the potential for live streams and future content.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The creator identified and addressed complexity issues with two-colored planets in the game.",
+      "explanation": "The creator found that two-colored planets, which initially added one colored resource and one colorless resource, were too complicated for new players to track. This complexity was exacerbated when multiple such planets were in play. To simplify, the creator changed the planets to add specific colored resources without requiring players to choose, making it easier to keep track of resources. This change was tested and found to improve playability.",
+      "timestamp_seconds": 24
+    },
+    {
+      "importance": "major",
+      "main_point": "The creator discovered that players tended to use a straightforward strategy due to the lack of high-end cards and coherent strategies in the decks.",
+      "explanation": "During testing, it was observed that players primarily used a middle path to attack their opponent's home planet rather than exploring more spaces. This behavior was attributed to the decks being composed of common cards without high-end cards that would incentivize more strategic play. The creator noted that this lack of variety in strategies was partly due to the decks being a collection of common cards without a clear strategy.",
+      "timestamp_seconds": 263
+    },
+    {
+      "importance": "minor",
+      "main_point": "The creator plans to incorporate live streams and continue weekly video updates despite time constraints.",
+      "explanation": "The creator mentioned that a friend suggested doing live streams for test sessions or drawing sessions. The creator is considering this idea and is open to feedback from viewers. Additionally, the creator plans to continue making weekly videos but needs to allocate a full day each week to work on the game and edit videos. The creator also mentioned using Microsoft Project to plan their schedule, which includes studying, gym time, and music rehearsals.",
+      "timestamp_seconds": 476
+    }
+  ],
+  "model": "mistral-small"
+}

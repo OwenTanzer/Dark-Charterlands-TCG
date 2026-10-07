@@ -1,0 +1,69 @@
+{
+    "video":  {
+                  "id":  "61IZB37UOLM",
+                  "views":  907,
+                  "speaker":  "Leandro",
+                  "part":  26,
+                  "title":  "Let\u0027s Make a Trading Card Game: 26 - Kickstarter Launch, Multiplayer \u0026 Card Wordings",
+                  "duration_min":  20,
+                  "published":  "2017-11-21"
+              },
+    "summary":  "The video explores the development and launch of a Kickstarter campaign for the trading card game \u0027Multiverse: Cosmic Conquest\u0027, highlighting innovative multiplayer features and the importance of balancing gameplay. It also delves into the iterative process of refining card effects and terminology to enhance clarity and player experience.",
+    "overall_lesson":  "The most important lesson from this video is the critical need for clear, unambiguous card wording and intuitive terminology to enhance player understanding and engagement, especially in a complex, multiplayer trading card game.",
+    "takeaways":  [
+                      {
+                          "point_index":  1,
+                          "area":  "Multiplayer \u0026 politics",
+                          "implication":  "Introduce \u0027instant actions\u0027 to allow players to respond to actions directly affecting them, reducing wait times and increasing interaction. This is especially important in multiplayer games where turn-based mechanics can lead to longer game durations.",
+                          "relevance":  "high",
+                          "main_point":  "The game includes multiplayer features with instant actions to enhance interaction and reduce wait times.",
+                          "explanation":  "The speaker explains that multiplayer games in \u0027Multiverse: Cosmic Conquest\u0027 can be longer due to more players and turn-based mechanics. To mitigate this, they introduced \u0027instant actions\u0027 that allow players to respond to actions directly affecting them, reducing overall wait times and increasing interaction. This design ensures that players remain engaged even when it\u0027s not their turn.",
+                          "timestamp_seconds":  91,
+                          "importance":  "major"
+                      },
+                      {
+                          "point_index":  2,
+                          "area":  "Multiplayer \u0026 politics",
+                          "implication":  "Design cards like the \u0027wormhole\u0027 card to enhance interaction and dynamics in multiplayer games. Ensure these cards are balanced and do not overpower two-player games.",
+                          "relevance":  "medium",
+                          "main_point":  "The \u0027wormhole\u0027 card is introduced to make multiplayer games more dynamic and engaging.",
+                          "explanation":  "The speaker introduces the \u0027wormhole\u0027 card, a galaxy card that allows objects to move from one wormhole to another, effectively shortening the distance between different parts of the galaxy. This card is designed to be more powerful in multiplayer games, enhancing interaction and dynamics without affecting the balance of two-player games. The wormhole card requires at least two wormholes to be explored for movement, ensuring it doesn\u0027t become overpowered.",
+                          "timestamp_seconds":  503,
+                          "importance":  "major"
+                      },
+                      {
+                          "point_index":  3,
+                          "area":  "Onboarding \u0026 complexity",
+                          "implication":  "Regularly update and refine the game\u0027s rules and card wordings to improve clarity. This will help new players understand the game more quickly and reduce confusion.",
+                          "relevance":  "high",
+                          "main_point":  "The game\u0027s rules and card wordings have been updated to improve clarity and balance.",
+                          "explanation":  "The speaker mentions that the game\u0027s rules have been updated, and the card wordings have been revised for better clarity. This includes fixing \u0027weird wonky wording\u0027 and ensuring that the rules are clear and understandable for players. The updates aim to enhance the overall gameplay experience by making the rules and card effects more intuitive.",
+                          "timestamp_seconds":  71,
+                          "importance":  "minor"
+                      },
+                      {
+                          "point_index":  4,
+                          "area":  "Onboarding \u0026 complexity",
+                          "implication":  "Ensure card wording is clear and unambiguous to avoid misinterpretation. This may involve revising wording multiple times based on playtesting feedback. Consider the limited space on the card and aim for simplicity.",
+                          "relevance":  "high",
+                          "main_point":  "The speaker discusses the importance of clear and unambiguous card wording in a trading card game.",
+                          "explanation":  "The speaker explains that the initial wording of a card effect was misinterpreted by playtesters, leading to confusion. The card\u0027s effect involved moving objects through wormholes, but players misunderstood the range and movement mechanics. To address this, the speaker worked on revising the card\u0027s wording to make it more intuitive and self-explanatory. The speaker also mentions the challenge of fitting the text within the limited space on the card. The final wording was simplified to ensure it could only be interpreted in one way, aligning with the game\u0027s rules.",
+                          "timestamp_seconds":  739,
+                          "importance":  "major"
+                      },
+                      {
+                          "point_index":  5,
+                          "area":  "Onboarding \u0026 complexity",
+                          "implication":  "Use intuitive and straightforward terminology on cards to improve readability. Avoid complex phrases and opt for simple terms that convey the same meaning.",
+                          "relevance":  "high",
+                          "main_point":  "The speaker describes changes made to the terminology used on cards to improve readability.",
+                          "explanation":  "The speaker highlights that the original terminology on some cards was confusing and not intuitive. For example, the effect of the Galactic Alliance card was initially written as \u0027gained control of all planets under no players control,\u0027 which was deemed too complex. The speaker changed the terminology to use more straightforward terms like \u0027allied\u0027 for friendly units, \u0027enemy\u0027 for opponent\u0027s units, and \u0027neutral\u0027 for unexplored spaces. This change made the card effects easier to understand without altering the underlying rules.",
+                          "timestamp_seconds":  965,
+                          "importance":  "minor"
+                      }
+                  ],
+    "model":  "mistral-small",
+    "pipeline_model":  "mistral-small",
+    "areas_reclassified":  true,
+    "area_classification_method":  "manual point review, 2026-10-06"
+}

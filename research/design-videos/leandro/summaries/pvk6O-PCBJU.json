@@ -1,0 +1,27 @@
+{
+  "video_id": "pvk6O-PCBJU",
+  "title": "Let's make a trading card game: 8",
+  "video_type": "Thesis Piece",
+  "summary": "The video discusses the development of a trading card game, focusing on making the basic set draftable. The speaker explains the draft format, the strategies involved, and the process of creating and balancing the cards. Additionally, the speaker shares updates on artwork, streaming plans, and plans to involve subscribers in testing the game.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The speaker is working on making the basic set of their trading card game draftable, involving multiple strategies and balanced cards.",
+      "explanation": "The speaker explains that draft is a popular format in trading card games where players build decks from cards they open in booster packs. For their game, the speaker is designing a set with 10 different strategies, including four monocolor and six two-color strategies. The speaker is in the process of creating and balancing these cards, which involves reusing interesting cards from previous sets and ensuring that each strategy has similar support. The speaker mentions that this process will take about a week to complete.",
+      "timestamp_seconds": 11
+    },
+    {
+      "importance": "major",
+      "main_point": "The speaker discusses the process of creating booster packs and the rarity of cards within them.",
+      "explanation": "The speaker details the composition of booster packs, which include 10 Commons, 3 uncommons, 1 rare, and 1 Galaxy card. Uncommon cards are twice as hard to find as Commons, and rares are twice as hard to find as uncommons. The speaker uses a program to generate the distribution of these cards and plans to print the boosters once the basic set is finished. This process ensures that each booster pack contains unique cards, adding to the excitement and strategy of the game.",
+      "timestamp_seconds": 162
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker has decided on the name 'Multiverse: A Cosmic Conquest' for the trading card game.",
+      "explanation": "The speaker explains the reasoning behind the name, stating that it fits well with the game's concept of playing in different versions of the same galaxy and alternate universes. The name is also chosen for its universal appeal and ease of translation. The speaker mentions that the game will feature expansions set in various worlds, including realistic and fantastical settings.",
+      "timestamp_seconds": 305
+    }
+  ],
+  "model": "mistral-small"
+}

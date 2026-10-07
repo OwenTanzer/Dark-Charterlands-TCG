@@ -1,0 +1,45 @@
+{
+  "video_id": "cmqc1b9ceEs",
+  "title": "Let's make a trading card game: 4",
+  "video_type": "Thesis Piece",
+  "summary": "The video offers a comprehensive look into the creation and mechanics of the trading card game 'Mothership', including the development challenges and gameplay rules. It also provides an overview of the game's core mechanics, deck-building strategies, and various play formats, with a focus on limited formats. The creator also mentions their upcoming exam session and a temporary hiatus from uploading content.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The game 'Mothership' supports multiple player configurations, including two, three, four, and six players.",
+      "explanation": "The game is designed to accommodate different numbers of players, with specific boards or 'galaxies' for each configuration. The creator mentions that playing with five players is unusual and not typically recommended. The game's flexibility in player count is a key feature, allowing for a variety of gaming experiences.",
+      "timestamp_seconds": 41
+    },
+    {
+      "importance": "major",
+      "main_point": "The creator has developed a cost impact curve to balance the game's mechanics.",
+      "explanation": "The cost impact curve is a mathematical model used to balance the game's resources and impacts. The creator explains that for one resource, you get one impact, for two resources, you get 1.6 impacts, and so on. This curve helps ensure that the game is balanced and fair for all players. The creator mentions trying different methods, including solving it as a parabolic function, but ultimately settled on a specific algorithm.",
+      "timestamp_seconds": 85
+    },
+    {
+      "importance": "minor",
+      "main_point": "The game features different types of cards, including Arsenal cards and Galaxy cards.",
+      "explanation": "Arsenal cards are the main cards used in the game and are divided into actions, creatures, and structures. These cards are what players use to build their decks and interact with the game. Galaxy cards, on the other hand, form a separate deck and are used to create the game board. The creator explains that Galaxy cards cannot be played like Arsenal cards and are used to explore and colonize the game's universe.",
+      "timestamp_seconds": 356
+    },
+    {
+      "importance": "minor",
+      "main_point": "The development of the game has been impacted by time constraints due to exams.",
+      "explanation": "The creator mentions that both he and the artist, Vasili, have upcoming exams that are taking up their time. This has slowed down the development process, and the creator expresses regret that there is not more new content to show. Despite this, the creator is optimistic about the progress made so far and is excited to share the first official artwork for the game.",
+      "timestamp_seconds": 253
+    },
+    {
+      "importance": "major",
+      "main_point": "The game's objective is to destroy all creatures on the opponent's planet and place your own creature there to win.",
+      "explanation": "The game involves attacking with creatures or structures to destroy the opponent's creatures. The attacking and defending cards must be on the same top, unless a special ability called range is present. The game is turn-based, with each turn consisting of different phases: beginning, main, battle, and ending. The main phase is where most actions, including attacks, occur. The battle phase is triggered when an attack is initiated, and both the attacker and defender deal damage simultaneously.",
+      "timestamp_seconds": 757
+    },
+    {
+      "importance": "major",
+      "main_point": "The game features different formats of play, including constructed and limited, with the speaker preferring limited formats.",
+      "explanation": "Constructed play involves preparing a deck beforehand based on one's collection. Limited play, on the other hand, involves building a deck on the fly by opening packs or products of the game. The speaker expresses a preference for limited formats because they find them fairer, as everyone has the same chance of winning before the tournament starts.",
+      "timestamp_seconds": 999
+    }
+  ],
+  "model": "mistral-small"
+}

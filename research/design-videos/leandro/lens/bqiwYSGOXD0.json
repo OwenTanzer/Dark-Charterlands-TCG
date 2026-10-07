@@ -1,0 +1,49 @@
+{
+    "video":  {
+                  "id":  "bqiwYSGOXD0",
+                  "views":  1366,
+                  "speaker":  "Leandro",
+                  "part":  22,
+                  "title":  "Let\u0027s Make a Trading Card Game: 22",
+                  "duration_min":  26,
+                  "published":  "2016-07-27"
+              },
+    "summary":  "The video explores the development process of a trading card game, Multiverse, focusing on playtesting challenges, gameplay mechanics, and design decisions. It also covers plans for a Kickstarter campaign to fund both physical and digital versions of the game.",
+    "overall_lesson":  "Streamline mechanics and consider player experience to enhance gameplay and accessibility.",
+    "takeaways":  [
+                      {
+                          "point_index":  2,
+                          "area":  "Card \u0026 mechanic design",
+                          "implication":  "Review the mechanics of the game to ensure that abilities are streamlined and do not add unnecessary complexity. Consider if any abilities in Dark Charterlands could be keyworded or simplified to improve gameplay.",
+                          "relevance":  "medium",
+                          "main_point":  "The boarding mechanic in the game needs to be adjusted to improve gameplay.",
+                          "explanation":  "The speaker discusses the boarding mechanic, which was initially an ability of all units but is being changed to a keyword ability. This change will make the game more streamlined and reduce unnecessary complexity. The speaker also notes that boarding should be a property of ships rather than units, which aligns better with the game\u0027s space theme and adds diversity to ships.",
+                          "timestamp_seconds":  270,
+                          "importance":  "minor"
+                      },
+                      {
+                          "point_index":  5,
+                          "area":  "Onboarding \u0026 complexity",
+                          "implication":  "Consider removing or simplifying activated abilities in Dark Charterlands to make the game more accessible for new players. Ensure that the game\u0027s mechanics are intuitive and do not overwhelm beginners.",
+                          "relevance":  "medium",
+                          "main_point":  "The speaker decides to remove activated abilities from the current set of cards.",
+                          "explanation":  "Activated abilities are those that can be activated by paying a certain cost. The speaker found that these abilities did not add much to the gameplay and were often extra fluff on the cards. Removing them will streamline the gameplay and provide a slightly easier entrance point for new players.",
+                          "timestamp_seconds":  910,
+                          "importance":  "major"
+                      },
+                      {
+                          "point_index":  6,
+                          "area":  "Card \u0026 mechanic design",
+                          "implication":  "Introduce \u0027reactions\u0027 in Dark Charterlands to add tension and surprise to gameplay. Ensure that these reactions are balanced and do not disrupt the flow of the game, especially in multiplayer settings.",
+                          "relevance":  "high",
+                          "main_point":  "The speaker introduces the concept of \u0027reactions\u0027 to add tension to gameplay.",
+                          "explanation":  "Reactions can be played on your turn and in response to specific events, such as an attack being declared or an opponent moving a unit onto your space. This adds a surprise factor to battles and keeps both players more alert during the opponent\u0027s turn. The speaker is still evaluating how this will work in multiplayer.",
+                          "timestamp_seconds":  1066,
+                          "importance":  "major"
+                      }
+                  ],
+    "model":  "mistral-small",
+    "pipeline_model":  "mistral-small",
+    "areas_reclassified":  true,
+    "area_classification_method":  "manual point review, 2026-10-06"
+}

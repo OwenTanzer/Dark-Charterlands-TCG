@@ -158,6 +158,8 @@ identifies deckbuilding and the social layer as the main motivational drivers.
 
 > **Full video digest:** the 18 most-watched TCG design videos (Rosewater, Brode, Garfield, Slay the Spire, Pokémon, Hearthstone, Race for the Galaxy, Extra Credits and more) were run through our local Mistral pipeline. The result is 106 timestamped takeaways grouped by design area, in [`research/design-videos/DIGEST.md`](../../research/design-videos/DIGEST.md) ([PDF](../../research/design-videos/DIGEST.pdf)).
 
+> **Leandro series:** all 28 parts of *Let's Make a Trading Card Game* have a separate [timestamped digest](../../research/design-videos/leandro/DIGEST.md) ([PDF](../../research/design-videos/leandro/DIGEST.pdf)). It has 86 retained takeaways. The *For us* text is model-generated discussion material, and ten design-area files were manually classified after the interrupted run; check consequential claims at the video links.
+
 **Insights**
 - **I7. Work with human nature in multiplayer.** People avoid being seen as a threat
   and don't want to be the one who attacks. Give them *reasons* to act that aren't

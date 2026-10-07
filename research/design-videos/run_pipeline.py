@@ -11,6 +11,7 @@ Usage:
     python run_pipeline.py                      # all videos, mistral-small
     python run_pipeline.py --model mistral-nemo
     python run_pipeline.py --only QHHg99hwQGY,HjhsY2Zuo-c
+    python run_pipeline.py --set leandro   # a video set in its own subfolder
     python run_pipeline.py --chunk-chars 30000 --num-ctx 16384   # pipeline's own defaults
 
 Long talks are split into ~12,000-character pieces with an 8k context window
@@ -34,7 +35,6 @@ import requests
 HERE = Path(__file__).resolve().parent
 PIPELINE = Path(os.environ.get(
     "MEDIA_FLOW_DIR", HERE.parents[2] / "media flow and critique youtube"))
-OUT = HERE / "summaries"
 
 
 def pipeline_python() -> str:
@@ -54,30 +54,35 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", default="mistral-small")
     ap.add_argument("--only", default=None, help="Comma-separated video ids")
+    ap.add_argument("--set", default=None, help="Video set subfolder, e.g. leandro (default: this folder)")
     ap.add_argument("--chunk-chars", type=int, default=12000,
                     help="Transcript piece size per model call (pipeline default 30000)")
     ap.add_argument("--num-ctx", type=int, default=8192,
                     help="Model context window per call (pipeline default 16384)")
     args = ap.parse_args()
 
-    videos = json.loads((HERE / "videos.json").read_text(encoding="utf-8"))
+    data = HERE / args.set if args.set else HERE
+    out = data / "summaries"
+    videos = json.loads((data / "videos.json").read_text(encoding="utf-8"))
     if args.only:
         wanted = set(args.only.split(","))
         videos = [v for v in videos if v["id"] in wanted]
-    OUT.mkdir(exist_ok=True)
+    out.mkdir(exist_ok=True)
     slug = args.model.replace(":", "-").replace("/", "-")
     env = {**os.environ, "PYTHONIOENCODING": "utf-8"}
 
     for i, v in enumerate(videos, 1):
-        dest = OUT / f"{v['id']}.json"
+        dest = out / f"{v['id']}.json"
         if dest.exists():
             print(f"[{i}/{len(videos)}] skip (done): {v['title']}")
             continue
         print(f"[{i}/{len(videos)}] {v['title']}", flush=True)
         start = time.time()
         # Run the pipeline's own main() with memory-saving settings (see _pipeline_runner.py).
+        # Videos without YouTube captions use a local Whisper transcript (transcribe_local.py).
+        local = data / "transcripts" / f"{v['id']}.txt"
         proc = subprocess.run([pipeline_python(), str(HERE / "_pipeline_runner.py"), v["id"], args.model,
-                               str(args.chunk_chars), str(args.num_ctx)],
+                               str(args.chunk_chars), str(args.num_ctx)] + ([str(local)] if local.exists() else []),
                               cwd=PIPELINE, env=env, capture_output=True, text=True, encoding="utf-8")
         unload_model(args.model)
         produced = PIPELINE / f"summary_{v['id']}_{slug}.json"
@@ -88,7 +93,7 @@ def main():
         else:
             err = (proc.stderr or proc.stdout).strip().splitlines()[-3:]
             print(f"    FAILED: {' | '.join(err)}", flush=True)
-            (OUT / f"{v['id']}.error.txt").write_text(proc.stderr + proc.stdout, encoding="utf-8")
+            (out / f"{v['id']}.error.txt").write_text(proc.stderr + proc.stdout, encoding="utf-8")
 
 
 if __name__ == "__main__":

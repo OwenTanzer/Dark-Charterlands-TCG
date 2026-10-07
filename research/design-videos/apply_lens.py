@@ -10,6 +10,7 @@ Usage:
     python apply_lens.py                  # lens every summary not yet lensed, then build DIGEST.md
     python apply_lens.py --digest-only    # rebuild DIGEST.md from lens/ only
     python apply_lens.py --model mistral-nemo
+    python apply_lens.py --set leandro    # a video set in its own subfolder
 """
 import argparse
 import json
@@ -20,7 +21,9 @@ from pathlib import Path
 import requests
 
 HERE = Path(__file__).resolve().parent
-SUMMARIES, LENS = HERE / "summaries", HERE / "lens"
+# Data folder: this folder for the main set, or HERE/<name> for a --set (e.g. leandro/).
+DATA = HERE
+SUMMARIES, LENS = DATA / "summaries", DATA / "lens"
 OLLAMA_URL = "http://localhost:11434/api/chat"
 
 AREAS = [
@@ -194,8 +197,17 @@ def link(meta, sec):
 def build_digest(videos: list[dict]) -> str:
     lensed = [json.loads(p.read_text(encoding="utf-8")) for v in videos if (p := LENS / f"{v['id']}.json").exists()]
     order = {"high": 0, "medium": 1, "low": 2}
-    md = ["# TCG design videos: key points for Dark Charterlands", "",
-          f"{len(lensed)} of {len(videos)} videos processed. Each video was summarized by the "
+    cfg_path = DATA / "set.json"
+    cfg = json.loads(cfg_path.read_text(encoding="utf-8")) if cfg_path.exists() else {}
+    if cfg.get("order") == "list":  # a series: keep the videos.json order (part 1, 2, ...)
+        pos = {v["id"]: i for i, v in enumerate(videos)}
+        video_key = lambda vid: pos[vid["id"]]
+    else:  # a collection of talks: most-watched first
+        video_key = lambda vid: -vid["views"]
+    md = [f"# {cfg.get('title', 'TCG design videos: key points for Dark Charterlands')}", ""]
+    if cfg.get("intro"):
+        md += [cfg["intro"], ""]
+    md += [f"{len(lensed)} of {len(videos)} videos processed. Each video was summarized by the "
           "media-flow-critique-youtube pipeline (`run_single_video_ollama.py`, mistral-small: timestamped, "
           "transcript-grounded key points), then read against the Dark Charterlands design brief by "
           "`apply_lens.py`, and each takeaway was filed into a design area from its own content (a separate "
@@ -211,7 +223,7 @@ def build_digest(videos: list[dict]) -> str:
                ", ".join(f"[{v['title']}](https://www.youtube.com/watch?v={v['id']})" for v in missing), ""]
 
     md += ["## Headline lesson per video", "", "| Video | Views | Lesson |", "|---|---|---|"]
-    for L in sorted(lensed, key=lambda L: -L["video"]["views"]):
+    for L in sorted(lensed, key=lambda L: video_key(L["video"])):
         v = L["video"]
         md.append(f"| [{v['title']}](https://www.youtube.com/watch?v={v['id']}) ({v['speaker']}) | "
                   f"{v['views']:,} | {L['overall_lesson'].replace('|', '/')} |")
@@ -225,7 +237,7 @@ def build_digest(videos: list[dict]) -> str:
            "Sorted by relevance to Dark Charterlands (high first). Low-relevance takeaways are in the per-video section only.", ""]
     for area in AREAS:
         items = sorted([x for x in by_area.get(area, []) if x[1]["relevance"] != "low"],
-                       key=lambda x: (order[x[1]["relevance"]], -x[0]["views"]))
+                       key=lambda x: (order[x[1]["relevance"]], video_key(x[0]), x[1]["timestamp_seconds"] or 0))
         if not items:
             continue
         md += [f"### {area}", ""]
@@ -236,7 +248,7 @@ def build_digest(videos: list[dict]) -> str:
         md.append("")
 
     md += ["## Per video", ""]
-    for L in sorted(lensed, key=lambda L: -L["video"]["views"]):
+    for L in sorted(lensed, key=lambda L: video_key(L["video"])):
         v = L["video"]
         md += [f"### [{v['title']}](https://www.youtube.com/watch?v={v['id']})", "",
                f"{v['speaker']} · {v['views']:,} views", "", f"**Summary:** {L['summary']}", "",
@@ -258,8 +270,12 @@ def main():
     ap.add_argument("--only", default=None, help="Comma-separated video ids to lens")
     ap.add_argument("--reclassify", action="store_true",
                     help="Only re-file existing takeaways into design areas, then rebuild the digest")
+    ap.add_argument("--set", default=None, help="Video set subfolder, e.g. leandro (default: this folder)")
     args = ap.parse_args()
-    videos = json.loads((HERE / "videos.json").read_text(encoding="utf-8"))
+    global DATA, SUMMARIES, LENS
+    DATA = HERE / args.set if args.set else HERE
+    SUMMARIES, LENS = DATA / "summaries", DATA / "lens"
+    videos = json.loads((DATA / "videos.json").read_text(encoding="utf-8"))
     LENS.mkdir(exist_ok=True)
 
     if args.reclassify:
@@ -277,7 +293,7 @@ def main():
                 print(f"    FAILED: {e}", file=sys.stderr)
                 continue
             path.write_text(json.dumps(lensed, indent=2, ensure_ascii=False), encoding="utf-8")
-        (HERE / "DIGEST.md").write_text(build_digest(videos), encoding="utf-8")
+        (DATA / "DIGEST.md").write_text(build_digest(videos), encoding="utf-8")
         print("wrote DIGEST.md")
         return
 
@@ -299,7 +315,7 @@ def main():
             requests.post("http://localhost:11434/api/generate", json={"model": args.model, "keep_alive": 0}, timeout=60)
             print(f"    {len(result['takeaways'])} takeaways", flush=True)
 
-    (HERE / "DIGEST.md").write_text(build_digest(videos), encoding="utf-8")
+    (DATA / "DIGEST.md").write_text(build_digest(videos), encoding="utf-8")
     print("wrote DIGEST.md")
 
 

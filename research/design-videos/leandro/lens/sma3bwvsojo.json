@@ -1,0 +1,28 @@
+{
+  "video": {
+    "id": "sma3bwvsojo",
+    "views": 3217,
+    "speaker": "Leandro",
+    "part": 11,
+    "title": "Let's Make a Trading Card Game: 11",
+    "duration_min": 10,
+    "published": "2015-04-13"
+  },
+  "summary": "The video discusses the development of a trading card game called Multiverse TCG. The creator shares updates on the game's logo, card design, and gameplay mechanics. He also talks about plans to create a website for the game, detailing the features and structure of the site.",
+  "overall_lesson": "The team should be prepared to iterate on gameplay mechanics based on playtesting feedback, especially if certain strategies become too dominant.",
+  "takeaways": [
+    {
+      "point_index": 1,
+      "area": "Playtesting & metrics",
+      "implication": "The team should consider if there are any dominant strategies in Dark Charterlands that might make the game feel too linear or rushed. If so, they should explore ways to encourage more varied playstyles, such as by adding multiple paths to victory or incentives for exploring different strategies. This could involve adjusting the rules or adding new mechanics to the game.",
+      "relevance": "medium",
+      "main_point": "The creator has identified a strategic issue in the game and is considering changes to the rules to encourage more exploration.",
+      "explanation": "The creator has been testing the game and has found that the best strategy is to fly straight to the opponent's planet and conquer it as fast as possible, rather than exploring the galaxy. He has tried to support more expansive strategies by giving bonuses for exploration, but he realized he was approaching the problem from the wrong angle. He is considering changing the goal of the game to include multiple ways of winning, such as conquering the opponent's home planet or conquering 10 planets in the galaxy.",
+      "timestamp_seconds": 45,
+      "importance": "major"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}

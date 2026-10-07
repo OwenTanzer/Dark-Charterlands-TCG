@@ -1,0 +1,38 @@
+{
+  "video": {
+    "id": "QkNJCtjrtPY",
+    "views": 1436,
+    "speaker": "Leandro",
+    "part": 14,
+    "title": "Let's Make a Trading Card Game: 14",
+    "duration_min": 10,
+    "published": "2015-09-07"
+  },
+  "summary": "The video is a progress update on the development of a trading card game called Multiverse. The creator discusses updates to the game's rules, the completion of the base set of cards, and the artwork for various planets. Additionally, the creator outlines a one-year plan for the game's release, including a Kickstarter campaign for a digital version.",
+  "overall_lesson": "The most important lesson from this video is the significance of thorough balancing and iterative design, along with the importance of high-quality, thematic artwork in enhancing player experience.",
+  "takeaways": [
+    {
+      "point_index": 0,
+      "area": "Costing & balance",
+      "implication": "Ensure that the balancing algorithm for creatures and structures is robust and tested thoroughly. Consider implementing a similar algorithm for balancing units and abilities in Dark Charterlands. Additionally, plan for extensive playtesting to fine-tune the balance of cards.",
+      "relevance": "high",
+      "main_point": "The creator has updated the game's rules and completed the base set of cards.",
+      "explanation": "The rules have been updated to include new conditions such as conquering 10 planets and a boarding mechanic. The base set of cards has been fully designed and balanced, with a new algorithm used to ensure that creatures and structures are balanced against each other. The creator mentions that all cards are now ready for printing and testing.",
+      "timestamp_seconds": 56,
+      "importance": "major"
+    },
+    {
+      "point_index": 2,
+      "area": "Card & mechanic design",
+      "implication": "Pay attention to the visual design of cards and ensure that the artwork effectively communicates the theme and mechanics of the game. Consider how the artwork can help players understand the game's lore and mechanics more intuitively.",
+      "relevance": "medium",
+      "main_point": "The creator discusses the artwork for various planets, highlighting the differences and improvements made.",
+      "explanation": "The creator shows artwork for a coniferous forest planet and an urban planet. The urban planet artwork underwent significant changes based on feedback, transitioning from a day scene to a night scene with more realistic skyscrapers and a bridge that connects to something. The creator appreciates the final version, which conveys the city's advanced society and vibrant night life.",
+      "timestamp_seconds": 243,
+      "importance": "minor"
+    }
+  ],
+  "model": "mistral-small",
+  "pipeline_model": "mistral-small",
+  "areas_reclassified": true
+}

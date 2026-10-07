@@ -1,0 +1,27 @@
+{
+  "video_id": "RIRP-rwg1is",
+  "title": "Let's make a trading card game: 10",
+  "video_type": "Analytic Overview",
+  "summary": "The video documents the speaker's process of preparing for and conducting a test draft of a trading card game called Multiverse. The speaker discusses the challenges encountered during the draft, the insights gained from playing various game configurations, and the design work being done for the game's cards and logo.",
+  "points": [
+    {
+      "importance": "major",
+      "main_point": "The speaker had to change the planned draft format due to scheduling constraints.",
+      "explanation": "The speaker initially planned a booster draft but had to switch to a sealed event format because the usual test group couldn't spare a whole day. The sealed event involves giving each player 7 or 8 booster packs to build a deck without drafting, which the speaker thought might be more suitable for new players.",
+      "timestamp_seconds": 31
+    },
+    {
+      "importance": "major",
+      "main_point": "The 3-player draft game was too long and highlighted issues with galaxy size and ship movement.",
+      "explanation": "The 3-player game took approximately 2 hours and was deemed too long. The large galaxy size and the movement speed of ships made it difficult for players to engage in combat quickly. The speaker noted that the distance between home planets was too great, requiring multiple turns just to reach an opponent's home planet. Additionally, the draft decks used were not pre-constructed and lacked power, contributing to the game's length.",
+      "timestamp_seconds": 245
+    },
+    {
+      "importance": "minor",
+      "main_point": "The speaker discovered that the balance between creatures and ships in Multiverse adds an element of luck to the game.",
+      "explanation": "The speaker observed that the game's resource system, which is separate from the deck, requires a balance between creatures and ships. Without enough of either, players cannot effectively move their creatures to attack opponents. This balance introduces a luck element, which can be both engaging for new players and frustrating for experienced ones if it becomes overwhelming. The speaker suggests that certain decks, particularly those with blue cards, might be able to minimize this luck element.",
+      "timestamp_seconds": 475
+    }
+  ],
+  "model": "mistral-small"
+}
