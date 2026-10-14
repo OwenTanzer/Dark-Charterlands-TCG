@@ -40,7 +40,7 @@ Aim for a 10–15 minute debrief. If a session stops early, still record why. Us
 
 Copy the core template, append the selected module, and save the filled report
 under [reports](reports/README.md). The suggested path is
-reports/<game-slug>/<version-slug>/YYYY-MM-DD-session-NN.md. Keep immutable
+reports/{game-slug}/{version-slug}/YYYY-MM-DD-session-NN.md. Keep immutable
 completed reports for each tested version; a later retest gets a new report.
 Use a repository commit SHA or release tag where possible, plus the human rules
 version and card/set revision or build. If a game uses a local charter or variant,
