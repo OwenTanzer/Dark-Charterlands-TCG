@@ -6,6 +6,8 @@
 > [`docs/research/tcg-design-research.md`](../research/tcg-design-research.md)
 > that motivate it.
 
+For after-game evidence and debriefs, see the [playtesting report templates](../playtesting/README.md). This draft's mechanics remain proposals.
+
 ## 1. Expectations this design must meet
 
 | # | Expectation | What it forces |
